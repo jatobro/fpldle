@@ -145,7 +145,6 @@ const main = async () => {
 
     const players = data.elements
       .map((player) => transformPlayer(player, teamMap))
-      .filter((player) => player.selectedBy > 0)
       .sort((a, b) => a.id - b.id);
 
     const playerValidation = validatePlayers(players);
