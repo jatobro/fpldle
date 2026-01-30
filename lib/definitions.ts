@@ -31,7 +31,6 @@ export type AttributeKey =
   | "position"
   | "team"
   | "price"
-  | "nationality"
   | "form"
   | "points"
   | "selectedBy";
@@ -51,7 +50,6 @@ export interface Player {
   position: Position;
   team: Team;
   price: number;
-  nationality: string;
   form: number;
   points: number;
   selectedBy: number;

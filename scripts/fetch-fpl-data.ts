@@ -81,7 +81,6 @@ const transformPlayer = (
     position: POSITION_MAP[player.element_type] || "MID",
     team: teamMap.get(player.team) || "Arsenal",
     price: player.now_cost / 10,
-    nationality: player.nation,
     form: parseFloat(player.form) || 0,
     points: player.total_points,
     selectedBy: parseFloat(player.selected_by_percent) || 0,
