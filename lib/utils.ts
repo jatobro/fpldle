@@ -1,8 +1,104 @@
-import type { Player } from "./definitions";
+import type {
+  Attribute,
+  AttributeStatus,
+  Player,
+  Position,
+  Team,
+} from "./definitions";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
+
+// Comparison Logic
+
+const POSITION_ORDER = {
+  GK: 1,
+  DEF: 2,
+  MID: 3,
+  FWD: 4,
+};
+
+const isPositionAdjacent = (guess: Position, target: Position) =>
+  Math.abs(POSITION_ORDER[guess] - POSITION_ORDER[target]) === 1;
+
+const comparePosition = (
+  guess: Position,
+  target: Position,
+): AttributeStatus => {
+  if (guess === target) return "correct";
+  if (isPositionAdjacent(guess, target)) return "close";
+  return "incorrect";
+};
+
+const compareTeam = (guess: Team, target: Team): AttributeStatus =>
+  guess === target ? "correct" : "incorrect";
+
+const comparePrice = (guess: number, target: number): AttributeStatus => {
+  if (guess === target) return "correct";
+  const isClose = Math.abs(guess - target) <= 0.5;
+  return isClose ? "close" : "incorrect";
+};
+
+const compareForm = (guess: number, target: number): AttributeStatus => {
+  if (guess === target) return "correct";
+  const isClose = Math.abs(guess - target) <= 1.0;
+  return isClose ? "close" : "incorrect";
+};
+
+const comparePoints = (guess: number, target: number): AttributeStatus => {
+  if (guess === target) return "correct";
+  const isClose = Math.abs(guess - target) <= 10;
+  return isClose ? "close" : "incorrect";
+};
+
+const compareSelectedBy = (guess: number, target: number): AttributeStatus => {
+  if (guess === target) return "correct";
+  const isClose = Math.abs(guess - target) <= 5;
+  return isClose ? "close" : "incorrect";
+};
+
+export const getDirection = (guess: number, target: number) =>
+  guess > target ? "↓" : guess < target ? "↑" : "";
+
+export const comparePlayers = (guess: Player, target: Player): Attribute[] => [
+  {
+    key: "position",
+    label: "Position",
+    value: guess.position,
+    status: comparePosition(guess.position, target.position),
+  },
+  {
+    key: "team",
+    label: "Team",
+    value: guess.team,
+    status: compareTeam(guess.team, target.team),
+  },
+  {
+    key: "price",
+    label: "Price",
+    value: guess.price,
+    status: comparePrice(guess.price, target.price),
+  },
+  {
+    key: "form",
+    label: "Form",
+    value: guess.form,
+    status: compareForm(guess.form, target.form),
+  },
+  {
+    key: "points",
+    label: "Points",
+    value: guess.points,
+    status: comparePoints(guess.points, target.points),
+  },
+  {
+    key: "selectedBy",
+    label: "Selected By",
+    value: guess.selectedBy,
+    status: compareSelectedBy(guess.selectedBy, target.selectedBy),
+  },
+];
 
 // Daily Player Selection
 
