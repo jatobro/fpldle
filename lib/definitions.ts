@@ -1,28 +1,31 @@
 export const MAX_ATTEMPTS = 6;
 
-export type Position = "GK" | "DEF" | "MID" | "FWD";
+export const TEAMS = [
+  "Arsenal",
+  "Aston Villa",
+  "Bournemouth",
+  "Brentford",
+  "Brighton",
+  "Burnley",
+  "Chelsea",
+  "Crystal Palace",
+  "Everton",
+  "Fulham",
+  "Leeds",
+  "Liverpool",
+  "Man City",
+  "Man Utd",
+  "Newcastle",
+  "Nott'm Forest",
+  "Spurs",
+  "Sunderland",
+  "West Ham",
+  "Wolves",
+] as const;
 
-export type Team =
-  | "Arsenal"
-  | "Aston Villa"
-  | "Bournemouth"
-  | "Brentford"
-  | "Brighton"
-  | "Burnley"
-  | "Chelsea"
-  | "Crystal Palace"
-  | "Everton"
-  | "Fulham"
-  | "Leeds"
-  | "Liverpool"
-  | "Man City"
-  | "Man Utd"
-  | "Newcastle"
-  | "Nott'm Forest"
-  | "Spurs"
-  | "Sunderland"
-  | "West Ham"
-  | "Wolves";
+export type Team = (typeof TEAMS)[number];
+
+export type Position = "GK" | "DEF" | "MID" | "FWD";
 
 export type AttributeKey =
   | "position"
