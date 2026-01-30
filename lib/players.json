@@ -80,6 +80,16 @@
     "selectedBy": 27.7
   },
   {
+    "id": 9,
+    "name": "Kiwior",
+    "position": "DEF",
+    "team": "Arsenal",
+    "price": 5.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 10,
     "name": "Lewis-Skelly",
     "position": "DEF",
@@ -147,7 +157,7 @@
     "price": 10,
     "form": 2.5,
     "points": 101,
-    "selectedBy": 16
+    "selectedBy": 15.9
   },
   {
     "id": 17,
@@ -208,6 +218,16 @@
     "form": 2.2,
     "points": 66,
     "selectedBy": 1.4
+  },
+  {
+    "id": 23,
+    "name": "Fábio Vieira",
+    "position": "MID",
+    "team": "Arsenal",
+    "price": 5.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 24,
@@ -318,6 +338,16 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.1
+  },
+  {
+    "id": 35,
+    "name": "Marschall",
+    "position": "GK",
+    "team": "Aston Villa",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 36,
@@ -470,6 +500,16 @@
     "selectedBy": 0.5
   },
   {
+    "id": 51,
+    "name": "Iling Jr",
+    "position": "MID",
+    "team": "Aston Villa",
+    "price": 5.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 52,
     "name": "J.Ramsey",
     "position": "MID",
@@ -498,6 +538,36 @@
     "form": 4.8,
     "points": 71,
     "selectedBy": 0.8
+  },
+  {
+    "id": 55,
+    "name": "Barkley",
+    "position": "MID",
+    "team": "Aston Villa",
+    "price": 4.8,
+    "form": 0,
+    "points": 15,
+    "selectedBy": 0
+  },
+  {
+    "id": 56,
+    "name": "Barrenechea",
+    "position": "MID",
+    "team": "Aston Villa",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 57,
+    "name": "Dobbin",
+    "position": "MID",
+    "team": "Aston Villa",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 58,
@@ -628,6 +698,16 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.1
+  },
+  {
+    "id": 71,
+    "name": "Zabarnyi",
+    "position": "DEF",
+    "team": "Bournemouth",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 72,
@@ -790,6 +870,26 @@
     "selectedBy": 0.1
   },
   {
+    "id": 88,
+    "name": "Cook",
+    "position": "MID",
+    "team": "Bournemouth",
+    "price": 4.9,
+    "form": 3.8,
+    "points": 30,
+    "selectedBy": 0
+  },
+  {
+    "id": 89,
+    "name": "Philip",
+    "position": "MID",
+    "team": "Bournemouth",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 90,
     "name": "Scott",
     "position": "MID",
@@ -798,6 +898,16 @@
     "form": 3.8,
     "points": 71,
     "selectedBy": 0.3
+  },
+  {
+    "id": 91,
+    "name": "Sinisterra",
+    "position": "MID",
+    "team": "Bournemouth",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 92,
@@ -820,6 +930,16 @@
     "selectedBy": 0.3
   },
   {
+    "id": 94,
+    "name": "Sadi",
+    "position": "MID",
+    "team": "Bournemouth",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 95,
     "name": "Silcott-Duberry",
     "position": "MID",
@@ -830,6 +950,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 96,
+    "name": "Winterburn",
+    "position": "MID",
+    "team": "Bournemouth",
+    "price": 4.5,
+    "form": 0,
+    "points": 1,
+    "selectedBy": 0
+  },
+  {
     "id": 97,
     "name": "Evanilson",
     "position": "FWD",
@@ -838,6 +968,16 @@
     "form": 5.8,
     "points": 72,
     "selectedBy": 3.1
+  },
+  {
+    "id": 98,
+    "name": "Enes Ünal",
+    "position": "FWD",
+    "team": "Bournemouth",
+    "price": 5.4,
+    "form": 0.8,
+    "points": 14,
+    "selectedBy": 0
   },
   {
     "id": 99,
@@ -970,6 +1110,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 112,
+    "name": "Roerslev",
+    "position": "DEF",
+    "team": "Brentford",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 113,
     "name": "Van den Berg",
     "position": "DEF",
@@ -1020,6 +1170,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 118,
+    "name": "Meghoma",
+    "position": "DEF",
+    "team": "Brentford",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 119,
     "name": "Mbeumo",
     "position": "MID",
@@ -1027,7 +1187,7 @@
     "price": 8.3,
     "form": 4.8,
     "points": 93,
-    "selectedBy": 17.2
+    "selectedBy": 17.3
   },
   {
     "id": 120,
@@ -1048,6 +1208,16 @@
     "form": 2,
     "points": 61,
     "selectedBy": 0.5
+  },
+  {
+    "id": 122,
+    "name": "Milambo",
+    "position": "MID",
+    "team": "Brentford",
+    "price": 5.2,
+    "form": 0,
+    "points": 1,
+    "selectedBy": 0
   },
   {
     "id": 123,
@@ -1090,6 +1260,26 @@
     "selectedBy": 0.1
   },
   {
+    "id": 127,
+    "name": "Nunes",
+    "position": "MID",
+    "team": "Brentford",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 128,
+    "name": "Onyeka",
+    "position": "MID",
+    "team": "Brentford",
+    "price": 4.8,
+    "form": 0,
+    "points": 12,
+    "selectedBy": 0
+  },
+  {
     "id": 129,
     "name": "Yarmoliuk",
     "position": "MID",
@@ -1118,6 +1308,36 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.2
+  },
+  {
+    "id": 132,
+    "name": "Maghoma",
+    "position": "MID",
+    "team": "Brentford",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 133,
+    "name": "Peart-Harris",
+    "position": "MID",
+    "team": "Brentford",
+    "price": 4.4,
+    "form": 0.2,
+    "points": 1,
+    "selectedBy": 0
+  },
+  {
+    "id": 134,
+    "name": "Trevitt",
+    "position": "MID",
+    "team": "Brentford",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 135,
@@ -1180,6 +1400,26 @@
     "selectedBy": 0.3
   },
   {
+    "id": 141,
+    "name": "Rushworth",
+    "position": "GK",
+    "team": "Brighton",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 142,
+    "name": "Scherpen",
+    "position": "GK",
+    "team": "Brighton",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 143,
     "name": "Boscagli",
     "position": "DEF",
@@ -1218,6 +1458,16 @@
     "form": 3.5,
     "points": 53,
     "selectedBy": 0.9
+  },
+  {
+    "id": 147,
+    "name": "Estupiñan",
+    "position": "DEF",
+    "team": "Brighton",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 148,
@@ -1270,6 +1520,26 @@
     "selectedBy": 0.2
   },
   {
+    "id": 153,
+    "name": "Webster",
+    "position": "DEF",
+    "team": "Brighton",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 154,
+    "name": "Cashin",
+    "position": "DEF",
+    "team": "Brighton",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 155,
     "name": "Slater",
     "position": "DEF",
@@ -1310,6 +1580,16 @@
     "selectedBy": 0.5
   },
   {
+    "id": 159,
+    "name": "March",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 5.8,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 160,
     "name": "Minteh",
     "position": "MID",
@@ -1318,6 +1598,16 @@
     "form": 0.5,
     "points": 81,
     "selectedBy": 2.6
+  },
+  {
+    "id": 161,
+    "name": "Enciso",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 5.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 162,
@@ -1330,6 +1620,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 163,
+    "name": "Hinshelwood",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 5.1,
+    "form": 1.8,
+    "points": 36,
+    "selectedBy": 0
+  },
+  {
     "id": 164,
     "name": "O'Riley",
     "position": "MID",
@@ -1338,6 +1638,16 @@
     "form": 0,
     "points": 12,
     "selectedBy": 0.3
+  },
+  {
+    "id": 165,
+    "name": "Sima",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 5.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 166,
@@ -1390,6 +1700,26 @@
     "selectedBy": 0.1
   },
   {
+    "id": 171,
+    "name": "Sarmiento",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 172,
+    "name": "Watson",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 4.8,
+    "form": 0.2,
+    "points": 5,
+    "selectedBy": 0
+  },
+  {
     "id": 173,
     "name": "Wieffer",
     "position": "MID",
@@ -1398,6 +1728,16 @@
     "form": 0,
     "points": 58,
     "selectedBy": 0.1
+  },
+  {
+    "id": 174,
+    "name": "Yalcouye",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 175,
@@ -1410,6 +1750,26 @@
     "selectedBy": 0.1
   },
   {
+    "id": 176,
+    "name": "Mazilu",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 177,
+    "name": "Moran",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 178,
     "name": "Welbeck",
     "position": "FWD",
@@ -1418,6 +1778,16 @@
     "form": 1.2,
     "points": 68,
     "selectedBy": 4.1
+  },
+  {
+    "id": 179,
+    "name": "Ferguson",
+    "position": "FWD",
+    "team": "Brighton",
+    "price": 5.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 180,
@@ -1480,6 +1850,16 @@
     "selectedBy": 0.2
   },
   {
+    "id": 186,
+    "name": "Roberts",
+    "position": "DEF",
+    "team": "Burnley",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 187,
     "name": "Walker",
     "position": "DEF",
@@ -1498,6 +1878,16 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.2
+  },
+  {
+    "id": 189,
+    "name": "Dodgson",
+    "position": "DEF",
+    "team": "Burnley",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 190,
@@ -1560,6 +1950,16 @@
     "selectedBy": 0.3
   },
   {
+    "id": 196,
+    "name": "Sambo",
+    "position": "DEF",
+    "team": "Burnley",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 197,
     "name": "Sonne",
     "position": "DEF",
@@ -1600,6 +2000,46 @@
     "selectedBy": 1.9
   },
   {
+    "id": 201,
+    "name": "Benson",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 5.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 202,
+    "name": "Bruun Larsen",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 5.3,
+    "form": 0.2,
+    "points": 31,
+    "selectedBy": 0
+  },
+  {
+    "id": 203,
+    "name": "Boateng",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 4.7,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 204,
+    "name": "Churlinov",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 205,
     "name": "Cullen",
     "position": "MID",
@@ -1630,6 +2070,36 @@
     "selectedBy": 0.1
   },
   {
+    "id": 208,
+    "name": "Koleosho",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 209,
+    "name": "Laurent",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 4.8,
+    "form": 1.5,
+    "points": 42,
+    "selectedBy": 0
+  },
+  {
+    "id": 210,
+    "name": "Tchaouna",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 4.9,
+    "form": 0.5,
+    "points": 33,
+    "selectedBy": 0
+  },
+  {
     "id": 211,
     "name": "A.Ramsey",
     "position": "MID",
@@ -1638,6 +2108,26 @@
     "form": 0,
     "points": 0,
     "selectedBy": 1.5
+  },
+  {
+    "id": 212,
+    "name": "Adewumi",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 213,
+    "name": "Banel",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 4.5,
+    "form": 0.2,
+    "points": 1,
+    "selectedBy": 0
   },
   {
     "id": 214,
@@ -1658,6 +2148,16 @@
     "form": 0,
     "points": 42,
     "selectedBy": 0.3
+  },
+  {
+    "id": 216,
+    "name": "Amdouni",
+    "position": "FWD",
+    "team": "Burnley",
+    "price": 4.8,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 217,
@@ -1708,6 +2208,16 @@
     "form": 0.5,
     "points": 3,
     "selectedBy": 0.2
+  },
+  {
+    "id": 222,
+    "name": "Penders",
+    "position": "GK",
+    "team": "Chelsea",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 223,
@@ -1770,6 +2280,16 @@
     "selectedBy": 2
   },
   {
+    "id": 229,
+    "name": "B.Badiashile",
+    "position": "DEF",
+    "team": "Chelsea",
+    "price": 4.4,
+    "form": 1.5,
+    "points": 7,
+    "selectedBy": 0
+  },
+  {
     "id": 230,
     "name": "Fofana",
     "position": "DEF",
@@ -1778,6 +2298,16 @@
     "form": 0.2,
     "points": 42,
     "selectedBy": 0.4
+  },
+  {
+    "id": 231,
+    "name": "M.Sarr",
+    "position": "DEF",
+    "team": "Chelsea",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 232,
@@ -1837,7 +2367,7 @@
     "price": 6.7,
     "form": 6.5,
     "points": 106,
-    "selectedBy": 17.8
+    "selectedBy": 17.9
   },
   {
     "id": 238,
@@ -1900,6 +2430,26 @@
     "selectedBy": 0.1
   },
   {
+    "id": 244,
+    "name": "Lavia",
+    "position": "MID",
+    "team": "Chelsea",
+    "price": 4.9,
+    "form": 0,
+    "points": 4,
+    "selectedBy": 0
+  },
+  {
+    "id": 245,
+    "name": "Mudryk",
+    "position": "MID",
+    "team": "Chelsea",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 246,
     "name": "Andrey Santos",
     "position": "MID",
@@ -1920,6 +2470,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 248,
+    "name": "Paez",
+    "position": "MID",
+    "team": "Chelsea",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 249,
     "name": "João Pedro",
     "position": "FWD",
@@ -1927,7 +2487,7 @@
     "price": 7.2,
     "form": 5.8,
     "points": 104,
-    "selectedBy": 33.2
+    "selectedBy": 33.3
   },
   {
     "id": 250,
@@ -2050,6 +2610,16 @@
     "selectedBy": 2
   },
   {
+    "id": 262,
+    "name": "Chadi Riad",
+    "position": "DEF",
+    "team": "Crystal Palace",
+    "price": 4,
+    "form": 0.8,
+    "points": 4,
+    "selectedBy": 0
+  },
+  {
     "id": 263,
     "name": "Clyne",
     "position": "DEF",
@@ -2058,6 +2628,26 @@
     "form": 1.6,
     "points": 14,
     "selectedBy": 0.6
+  },
+  {
+    "id": 264,
+    "name": "Holding",
+    "position": "DEF",
+    "team": "Crystal Palace",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 265,
+    "name": "Kporha",
+    "position": "DEF",
+    "team": "Crystal Palace",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 266,
@@ -2078,6 +2668,16 @@
     "form": 0.4,
     "points": 54,
     "selectedBy": 2.1
+  },
+  {
+    "id": 268,
+    "name": "Doucouré",
+    "position": "MID",
+    "team": "Crystal Palace",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 269,
@@ -2140,6 +2740,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 275,
+    "name": "Ahamada",
+    "position": "MID",
+    "team": "Crystal Palace",
+    "price": 4.3,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 276,
     "name": "Devenny",
     "position": "MID",
@@ -2148,6 +2758,66 @@
     "form": 1.6,
     "points": 29,
     "selectedBy": 1.5
+  },
+  {
+    "id": 277,
+    "name": "Ebiowei",
+    "position": "MID",
+    "team": "Crystal Palace",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 278,
+    "name": "J.Rak-Sakyi",
+    "position": "MID",
+    "team": "Crystal Palace",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 279,
+    "name": "M.França",
+    "position": "MID",
+    "team": "Crystal Palace",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 280,
+    "name": "Ozoh",
+    "position": "MID",
+    "team": "Crystal Palace",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 281,
+    "name": "Rodney",
+    "position": "MID",
+    "team": "Crystal Palace",
+    "price": 4.4,
+    "form": 0.2,
+    "points": 1,
+    "selectedBy": 0
+  },
+  {
+    "id": 282,
+    "name": "Umeh",
+    "position": "MID",
+    "team": "Crystal Palace",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 283,
@@ -2280,6 +2950,16 @@
     "selectedBy": 4.1
   },
   {
+    "id": 296,
+    "name": "Patterson",
+    "position": "DEF",
+    "team": "Everton",
+    "price": 4.4,
+    "form": 2.8,
+    "points": 20,
+    "selectedBy": 0
+  },
+  {
     "id": 297,
     "name": "Dixon",
     "position": "DEF",
@@ -2350,6 +3030,16 @@
     "selectedBy": 4.6
   },
   {
+    "id": 304,
+    "name": "Iroegbunam",
+    "position": "MID",
+    "team": "Everton",
+    "price": 4.8,
+    "form": 2.8,
+    "points": 49,
+    "selectedBy": 0
+  },
+  {
     "id": 305,
     "name": "Armstrong",
     "position": "MID",
@@ -2368,6 +3058,36 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.1
+  },
+  {
+    "id": 307,
+    "name": "Ebere",
+    "position": "MID",
+    "team": "Everton",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 308,
+    "name": "Heath",
+    "position": "MID",
+    "team": "Everton",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 309,
+    "name": "Metcalfe",
+    "position": "MID",
+    "team": "Everton",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 310,
@@ -2418,6 +3138,16 @@
     "form": 2.4,
     "points": 70,
     "selectedBy": 1.6
+  },
+  {
+    "id": 315,
+    "name": "Benda",
+    "position": "GK",
+    "team": "Fulham",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 316,
@@ -2570,6 +3300,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 331,
+    "name": "Cairney",
+    "position": "MID",
+    "team": "Fulham",
+    "price": 4.8,
+    "form": 2.4,
+    "points": 23,
+    "selectedBy": 0
+  },
+  {
     "id": 332,
     "name": "Lukić",
     "position": "MID",
@@ -2578,6 +3318,26 @@
     "form": 2.2,
     "points": 50,
     "selectedBy": 0.1
+  },
+  {
+    "id": 333,
+    "name": "Godo",
+    "position": "MID",
+    "team": "Fulham",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 334,
+    "name": "Harris",
+    "position": "MID",
+    "team": "Fulham",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 335,
@@ -2780,6 +3540,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 355,
+    "name": "Greenwood",
+    "position": "MID",
+    "team": "Leeds",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 356,
     "name": "Gruev",
     "position": "MID",
@@ -2790,6 +3560,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 357,
+    "name": "Ramazani",
+    "position": "MID",
+    "team": "Leeds",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 358,
     "name": "Tanaka",
     "position": "MID",
@@ -2798,6 +3578,36 @@
     "form": 1,
     "points": 43,
     "selectedBy": 0.2
+  },
+  {
+    "id": 359,
+    "name": "Crew",
+    "position": "MID",
+    "team": "Leeds",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 360,
+    "name": "Gelhardt",
+    "position": "MID",
+    "team": "Leeds",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 361,
+    "name": "Gyabi",
+    "position": "MID",
+    "team": "Leeds",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 362,
@@ -2818,6 +3628,16 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.3
+  },
+  {
+    "id": 364,
+    "name": "Mateo Joseph",
+    "position": "FWD",
+    "team": "Leeds",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 365,
@@ -2940,6 +3760,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 377,
+    "name": "Tsimikas",
+    "position": "DEF",
+    "team": "Liverpool",
+    "price": 4.8,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 378,
     "name": "Nallo",
     "position": "DEF",
@@ -2988,6 +3818,16 @@
     "form": 5.6,
     "points": 83,
     "selectedBy": 12.7
+  },
+  {
+    "id": 383,
+    "name": "Luis Díaz",
+    "position": "MID",
+    "team": "Liverpool",
+    "price": 8,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 384,
@@ -3060,6 +3900,16 @@
     "selectedBy": 5.4
   },
   {
+    "id": 391,
+    "name": "Gannon-Doak",
+    "position": "MID",
+    "team": "Bournemouth",
+    "price": 4.8,
+    "form": 0,
+    "points": 7,
+    "selectedBy": 0
+  },
+  {
     "id": 392,
     "name": "Endo",
     "position": "MID",
@@ -3068,6 +3918,36 @@
     "form": 0.2,
     "points": 8,
     "selectedBy": 0.1
+  },
+  {
+    "id": 393,
+    "name": "Bajcetic",
+    "position": "MID",
+    "team": "Liverpool",
+    "price": 4.3,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 394,
+    "name": "McConnell",
+    "position": "MID",
+    "team": "Liverpool",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 395,
+    "name": "Morton",
+    "position": "MID",
+    "team": "Liverpool",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 396,
@@ -3230,6 +4110,16 @@
     "selectedBy": 5.9
   },
   {
+    "id": 412,
+    "name": "Vitor Reis",
+    "position": "DEF",
+    "team": "Man City",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 413,
     "name": "Marmoush",
     "position": "MID",
@@ -3320,6 +4210,16 @@
     "selectedBy": 0.4
   },
   {
+    "id": 422,
+    "name": "Kovačić",
+    "position": "MID",
+    "team": "Man City",
+    "price": 5.9,
+    "form": 0,
+    "points": 1,
+    "selectedBy": 0
+  },
+  {
     "id": 423,
     "name": "N.Gonzalez",
     "position": "MID",
@@ -3340,6 +4240,16 @@
     "selectedBy": 0.2
   },
   {
+    "id": 425,
+    "name": "Echeverri",
+    "position": "MID",
+    "team": "Man City",
+    "price": 5.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 426,
     "name": "McAtee",
     "position": "MID",
@@ -3358,6 +4268,16 @@
     "form": 3.4,
     "points": 82,
     "selectedBy": 11.2
+  },
+  {
+    "id": 428,
+    "name": "Nypan",
+    "position": "MID",
+    "team": "Man City",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 429,
@@ -3398,6 +4318,16 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.1
+  },
+  {
+    "id": 433,
+    "name": "Harrison",
+    "position": "GK",
+    "team": "Man Utd",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 434,
@@ -3487,7 +4417,7 @@
     "price": 4.3,
     "form": 2.2,
     "points": 42,
-    "selectedBy": 0.9
+    "selectedBy": 1
   },
   {
     "id": 443,
@@ -3557,7 +4487,7 @@
     "price": 9.5,
     "form": 5.5,
     "points": 121,
-    "selectedBy": 26.1
+    "selectedBy": 26.2
   },
   {
     "id": 450,
@@ -3568,6 +4498,16 @@
     "form": 6,
     "points": 79,
     "selectedBy": 7.8
+  },
+  {
+    "id": 451,
+    "name": "Rashford",
+    "position": "MID",
+    "team": "Man Utd",
+    "price": 7,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 452,
@@ -3650,6 +4590,26 @@
     "selectedBy": 0.2
   },
   {
+    "id": 460,
+    "name": "Collyer",
+    "position": "MID",
+    "team": "Man Utd",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 461,
+    "name": "Fitzgerald",
+    "position": "MID",
+    "team": "Man Utd",
+    "price": 4.3,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 462,
     "name": "J.Fletcher",
     "position": "MID",
@@ -3668,6 +4628,16 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.1
+  },
+  {
+    "id": 464,
+    "name": "Moorhouse",
+    "position": "MID",
+    "team": "Man Utd",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 465,
@@ -3740,6 +4710,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 472,
+    "name": "Odysseas",
+    "position": "GK",
+    "team": "Newcastle",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 473,
     "name": "Hall",
     "position": "DEF",
@@ -3798,6 +4778,16 @@
     "form": 1.8,
     "points": 37,
     "selectedBy": 1.3
+  },
+  {
+    "id": 479,
+    "name": "Krafth",
+    "position": "DEF",
+    "team": "Newcastle",
+    "price": 4.3,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 480,
@@ -3920,6 +4910,16 @@
     "selectedBy": 1
   },
   {
+    "id": 492,
+    "name": "Antoñito C.",
+    "position": "MID",
+    "team": "Newcastle",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 493,
     "name": "Longstaff",
     "position": "MID",
@@ -3940,6 +4940,26 @@
     "selectedBy": 0.1
   },
   {
+    "id": 495,
+    "name": "Hayden",
+    "position": "MID",
+    "team": "Newcastle",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 496,
+    "name": "Kuol",
+    "position": "MID",
+    "team": "Newcastle",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 497,
     "name": "L.Miley",
     "position": "MID",
@@ -3948,6 +4968,16 @@
     "form": 3.5,
     "points": 58,
     "selectedBy": 3.4
+  },
+  {
+    "id": 498,
+    "name": "White",
+    "position": "MID",
+    "team": "Newcastle",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 499,
@@ -4050,6 +5080,16 @@
     "selectedBy": 3.2
   },
   {
+    "id": 509,
+    "name": "David Carmo",
+    "position": "DEF",
+    "team": "Nott'm Forest",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 510,
     "name": "Jair Cunha",
     "position": "DEF",
@@ -4068,6 +5108,16 @@
     "form": 0.5,
     "points": 22,
     "selectedBy": 0.1
+  },
+  {
+    "id": 512,
+    "name": "O.Richards",
+    "position": "DEF",
+    "team": "Nott'm Forest",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 513,
@@ -4120,6 +5170,36 @@
     "selectedBy": 4.8
   },
   {
+    "id": 518,
+    "name": "Jota",
+    "position": "MID",
+    "team": "Nott'm Forest",
+    "price": 5.4,
+    "form": 0,
+    "points": 1,
+    "selectedBy": 0
+  },
+  {
+    "id": 519,
+    "name": "Dominguez",
+    "position": "MID",
+    "team": "Nott'm Forest",
+    "price": 5,
+    "form": 5,
+    "points": 31,
+    "selectedBy": 0
+  },
+  {
+    "id": 520,
+    "name": "O'Brien",
+    "position": "MID",
+    "team": "Nott'm Forest",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 521,
     "name": "Sangaré",
     "position": "MID",
@@ -4148,6 +5228,16 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.1
+  },
+  {
+    "id": 524,
+    "name": "Stamenic",
+    "position": "MID",
+    "team": "Nott'm Forest",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 525,
@@ -4230,6 +5320,16 @@
     "selectedBy": 0.3
   },
   {
+    "id": 533,
+    "name": "Alese",
+    "position": "DEF",
+    "team": "Sunderland",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 534,
     "name": "Anderson",
     "position": "DEF",
@@ -4248,6 +5348,16 @@
     "form": 2.2,
     "points": 13,
     "selectedBy": 0.1
+  },
+  {
+    "id": 536,
+    "name": "Hjelde",
+    "position": "DEF",
+    "team": "Sunderland",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 537,
@@ -4320,6 +5430,36 @@
     "selectedBy": 0.4
   },
   {
+    "id": 544,
+    "name": "Diarra",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 5.3,
+    "form": 0,
+    "points": 13,
+    "selectedBy": 0
+  },
+  {
+    "id": 545,
+    "name": "Roberts",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 5.4,
+    "form": 0,
+    "points": 1,
+    "selectedBy": 0
+  },
+  {
+    "id": 546,
+    "name": "Aleksić",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 547,
     "name": "E.Le Fée",
     "position": "MID",
@@ -4328,6 +5468,46 @@
     "form": 3.8,
     "points": 81,
     "selectedBy": 1.4
+  },
+  {
+    "id": 548,
+    "name": "Mundle",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 4.9,
+    "form": 1.2,
+    "points": 10,
+    "selectedBy": 0
+  },
+  {
+    "id": 549,
+    "name": "Neil",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 4.8,
+    "form": 0.2,
+    "points": 3,
+    "selectedBy": 0
+  },
+  {
+    "id": 550,
+    "name": "Poveda",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 4.8,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 551,
+    "name": "Rigg",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 4.7,
+    "form": 0.4,
+    "points": 15,
+    "selectedBy": 0
   },
   {
     "id": 552,
@@ -4360,6 +5540,26 @@
     "selectedBy": 0.4
   },
   {
+    "id": 555,
+    "name": "Browne",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 556,
+    "name": "Ekwah",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 557,
     "name": "H.Jones",
     "position": "MID",
@@ -4378,6 +5578,16 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.2
+  },
+  {
+    "id": 559,
+    "name": "Triantis",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 560,
@@ -4500,6 +5710,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 572,
+    "name": "Dragusin",
+    "position": "DEF",
+    "team": "Spurs",
+    "price": 4.5,
+    "form": 0.2,
+    "points": 2,
+    "selectedBy": 0
+  },
+  {
     "id": 573,
     "name": "Spence",
     "position": "DEF",
@@ -4528,6 +5748,26 @@
     "form": 4,
     "points": 96,
     "selectedBy": 26.8
+  },
+  {
+    "id": 576,
+    "name": "Phillips",
+    "position": "DEF",
+    "team": "Spurs",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 577,
+    "name": "Takai",
+    "position": "DEF",
+    "team": "Spurs",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 578,
@@ -4580,6 +5820,16 @@
     "selectedBy": 10.4
   },
   {
+    "id": 583,
+    "name": "Kulusevski",
+    "position": "MID",
+    "team": "Spurs",
+    "price": 6.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 584,
     "name": "Tel",
     "position": "MID",
@@ -4610,6 +5860,16 @@
     "selectedBy": 0.2
   },
   {
+    "id": 587,
+    "name": "Bissouma",
+    "position": "MID",
+    "team": "Spurs",
+    "price": 5.2,
+    "form": 1,
+    "points": 5,
+    "selectedBy": 0
+  },
+  {
     "id": 588,
     "name": "Odobert",
     "position": "MID",
@@ -4618,6 +5878,26 @@
     "form": 3.4,
     "points": 43,
     "selectedBy": 0.1
+  },
+  {
+    "id": 589,
+    "name": "Solomon",
+    "position": "MID",
+    "team": "Spurs",
+    "price": 5.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 590,
+    "name": "Bryan",
+    "position": "MID",
+    "team": "Spurs",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 591,
@@ -4630,6 +5910,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 592,
+    "name": "Moore",
+    "position": "MID",
+    "team": "Spurs",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 593,
     "name": "P.M.Sarr",
     "position": "MID",
@@ -4638,6 +5928,16 @@
     "form": 0,
     "points": 42,
     "selectedBy": 0.8
+  },
+  {
+    "id": 594,
+    "name": "Min-hyeok",
+    "position": "MID",
+    "team": "Spurs",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 595,
@@ -4668,6 +5968,16 @@
     "form": 1,
     "points": 75,
     "selectedBy": 5.9
+  },
+  {
+    "id": 598,
+    "name": "Lankshear",
+    "position": "FWD",
+    "team": "Spurs",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 599,
@@ -4750,6 +6060,26 @@
     "selectedBy": 0.1
   },
   {
+    "id": 607,
+    "name": "N.Aguerd",
+    "position": "DEF",
+    "team": "West Ham",
+    "price": 4.4,
+    "form": 0,
+    "points": 3,
+    "selectedBy": 0
+  },
+  {
+    "id": 608,
+    "name": "Scarles",
+    "position": "DEF",
+    "team": "West Ham",
+    "price": 4.3,
+    "form": 3,
+    "points": 19,
+    "selectedBy": 0
+  },
+  {
     "id": 609,
     "name": "Todibo",
     "position": "DEF",
@@ -4818,6 +6148,56 @@
     "form": 6,
     "points": 56,
     "selectedBy": 0.3
+  },
+  {
+    "id": 616,
+    "name": "Álvarez",
+    "position": "MID",
+    "team": "West Ham",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 617,
+    "name": "Cornet",
+    "position": "MID",
+    "team": "West Ham",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 618,
+    "name": "G.Rodriguez",
+    "position": "MID",
+    "team": "West Ham",
+    "price": 4.8,
+    "form": 0.2,
+    "points": 8,
+    "selectedBy": 0
+  },
+  {
+    "id": 619,
+    "name": "L.Guilherme",
+    "position": "MID",
+    "team": "West Ham",
+    "price": 4.9,
+    "form": 0,
+    "points": 5,
+    "selectedBy": 0
+  },
+  {
+    "id": 620,
+    "name": "Earthy",
+    "position": "MID",
+    "team": "West Ham",
+    "price": 4.5,
+    "form": 0,
+    "points": 1,
+    "selectedBy": 0
   },
   {
     "id": 621,
@@ -5000,6 +6380,16 @@
     "selectedBy": 1.1
   },
   {
+    "id": 639,
+    "name": "Meupiyou",
+    "position": "DEF",
+    "team": "Wolves",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 640,
     "name": "Pedro Lima",
     "position": "DEF",
@@ -5040,6 +6430,26 @@
     "selectedBy": 0.1
   },
   {
+    "id": 644,
+    "name": "Bellegarde",
+    "position": "MID",
+    "team": "Wolves",
+    "price": 5.1,
+    "form": 0,
+    "points": 25,
+    "selectedBy": 0
+  },
+  {
+    "id": 645,
+    "name": "Fer López",
+    "position": "MID",
+    "team": "Wolves",
+    "price": 5.1,
+    "form": 0,
+    "points": 12,
+    "selectedBy": 0
+  },
+  {
     "id": 646,
     "name": "Gomes",
     "position": "MID",
@@ -5048,6 +6458,36 @@
     "form": 2.8,
     "points": 57,
     "selectedBy": 0.1
+  },
+  {
+    "id": 647,
+    "name": "Guedes",
+    "position": "MID",
+    "team": "Wolves",
+    "price": 5.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 648,
+    "name": "Munetsi",
+    "position": "MID",
+    "team": "Wolves",
+    "price": 5.3,
+    "form": 0,
+    "points": 38,
+    "selectedBy": 0
+  },
+  {
+    "id": 649,
+    "name": "B.Traore",
+    "position": "MID",
+    "team": "Wolves",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 650,
@@ -5080,6 +6520,16 @@
     "selectedBy": 1.3
   },
   {
+    "id": 653,
+    "name": "Hodge",
+    "position": "MID",
+    "team": "Wolves",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 654,
     "name": "Strand Larsen",
     "position": "FWD",
@@ -5098,6 +6548,26 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.2
+  },
+  {
+    "id": 656,
+    "name": "Kalajdžić",
+    "position": "FWD",
+    "team": "Wolves",
+    "price": 4.9,
+    "form": 0,
+    "points": 1,
+    "selectedBy": 0
+  },
+  {
+    "id": 657,
+    "name": "Chiwome",
+    "position": "FWD",
+    "team": "Wolves",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 658,
@@ -5207,7 +6677,7 @@
     "price": 5.2,
     "form": 2.6,
     "points": 90,
-    "selectedBy": 5.7
+    "selectedBy": 5.6
   },
   {
     "id": 669,
@@ -5288,6 +6758,16 @@
     "form": 2.8,
     "points": 67,
     "selectedBy": 0.1
+  },
+  {
+    "id": 677,
+    "name": "Guessand",
+    "position": "MID",
+    "team": "Aston Villa",
+    "price": 6.2,
+    "form": 0.5,
+    "points": 25,
+    "selectedBy": 0
   },
   {
     "id": 678,
@@ -5430,6 +6910,16 @@
     "selectedBy": 12.9
   },
   {
+    "id": 692,
+    "name": "Leoni",
+    "position": "DEF",
+    "team": "Liverpool",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 693,
     "name": "Hutchinson",
     "position": "MID",
@@ -5448,6 +6938,16 @@
     "form": 5.6,
     "points": 102,
     "selectedBy": 13.1
+  },
+  {
+    "id": 695,
+    "name": "Tchatchoua",
+    "position": "DEF",
+    "team": "Wolves",
+    "price": 4.4,
+    "form": 3.2,
+    "points": 36,
+    "selectedBy": 0
   },
   {
     "id": 696,
@@ -5560,6 +7060,16 @@
     "selectedBy": 0.4
   },
   {
+    "id": 707,
+    "name": "Dibling",
+    "position": "MID",
+    "team": "Everton",
+    "price": 5.3,
+    "form": 0.5,
+    "points": 16,
+    "selectedBy": 0
+  },
+  {
     "id": 708,
     "name": "M.Fernandes",
     "position": "MID",
@@ -5588,6 +7098,16 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.2
+  },
+  {
+    "id": 711,
+    "name": "Harriman-Annous",
+    "position": "MID",
+    "team": "Arsenal",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 712,
@@ -5650,6 +7170,16 @@
     "selectedBy": 1.1
   },
   {
+    "id": 718,
+    "name": "S.Magassa",
+    "position": "MID",
+    "team": "West Ham",
+    "price": 5,
+    "form": 0.2,
+    "points": 33,
+    "selectedBy": 0
+  },
+  {
     "id": 719,
     "name": "Lindelöf",
     "position": "DEF",
@@ -5668,6 +7198,46 @@
     "form": 1.8,
     "points": 35,
     "selectedBy": 0.1
+  },
+  {
+    "id": 721,
+    "name": "Milosavljević",
+    "position": "DEF",
+    "team": "Bournemouth",
+    "price": 4.4,
+    "form": 0.5,
+    "points": 19,
+    "selectedBy": 0
+  },
+  {
+    "id": 722,
+    "name": "Florentino",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 5,
+    "form": 4,
+    "points": 61,
+    "selectedBy": 0
+  },
+  {
+    "id": 723,
+    "name": "Canvot",
+    "position": "DEF",
+    "team": "Crystal Palace",
+    "price": 4.5,
+    "form": 2.6,
+    "points": 27,
+    "selectedBy": 0
+  },
+  {
+    "id": 724,
+    "name": "Geertruida",
+    "position": "DEF",
+    "team": "Sunderland",
+    "price": 4.5,
+    "form": 1.8,
+    "points": 32,
+    "selectedBy": 0
   },
   {
     "id": 725,
@@ -5700,6 +7270,26 @@
     "selectedBy": 0.1
   },
   {
+    "id": 728,
+    "name": "Röhl",
+    "position": "MID",
+    "team": "Everton",
+    "price": 5,
+    "form": 1.2,
+    "points": 16,
+    "selectedBy": 0
+  },
+  {
+    "id": 729,
+    "name": "Cuiabano",
+    "position": "DEF",
+    "team": "Nott'm Forest",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 730,
     "name": "Brobbey",
     "position": "FWD",
@@ -5720,6 +7310,16 @@
     "selectedBy": 0.1
   },
   {
+    "id": 732,
+    "name": "Uche",
+    "position": "FWD",
+    "team": "Crystal Palace",
+    "price": 5.5,
+    "form": 0.6,
+    "points": 14,
+    "selectedBy": 0
+  },
+  {
     "id": 733,
     "name": "Lammens",
     "position": "GK",
@@ -5728,6 +7328,26 @@
     "form": 2.8,
     "points": 49,
     "selectedBy": 1.9
+  },
+  {
+    "id": 734,
+    "name": "Bakwa",
+    "position": "MID",
+    "team": "Nott'm Forest",
+    "price": 5.9,
+    "form": 1.2,
+    "points": 12,
+    "selectedBy": 0
+  },
+  {
+    "id": 735,
+    "name": "Traoré",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 5.5,
+    "form": 0,
+    "points": 28,
+    "selectedBy": 0
   },
   {
     "id": 736,
@@ -5750,6 +7370,36 @@
     "selectedBy": 0.1
   },
   {
+    "id": 738,
+    "name": "Fabianski",
+    "position": "GK",
+    "team": "West Ham",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 739,
+    "name": "Mukasa",
+    "position": "MID",
+    "team": "Man City",
+    "price": 4.4,
+    "form": 0.2,
+    "points": 2,
+    "selectedBy": 0
+  },
+  {
+    "id": 740,
+    "name": "Mfuni",
+    "position": "DEF",
+    "team": "Man City",
+    "price": 3.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 741,
     "name": "Gray",
     "position": "FWD",
@@ -5758,6 +7408,76 @@
     "form": 0,
     "points": 0,
     "selectedBy": 0.1
+  },
+  {
+    "id": 742,
+    "name": "McAidoo",
+    "position": "MID",
+    "team": "Man City",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 743,
+    "name": "Emenalo",
+    "position": "MID",
+    "team": "Chelsea",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 744,
+    "name": "Oriola",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 4.5,
+    "form": 0,
+    "points": 1,
+    "selectedBy": 0
+  },
+  {
+    "id": 745,
+    "name": "Byfield",
+    "position": "DEF",
+    "team": "Spurs",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 746,
+    "name": "Morrison",
+    "position": "MID",
+    "team": "Liverpool",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 747,
+    "name": "Mayers",
+    "position": "DEF",
+    "team": "West Ham",
+    "price": 4,
+    "form": 0.5,
+    "points": 5,
+    "selectedBy": 0
+  },
+  {
+    "id": 748,
+    "name": "Dasilva",
+    "position": "MID",
+    "team": "Brentford",
+    "price": 4.9,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 749,
@@ -5770,6 +7490,466 @@
     "selectedBy": 1.7
   },
   {
+    "id": 750,
+    "name": "Rowswell",
+    "position": "DEF",
+    "team": "Spurs",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 751,
+    "name": "Akhamrich",
+    "position": "MID",
+    "team": "Spurs",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 752,
+    "name": "Golambeckis",
+    "position": "DEF",
+    "team": "West Ham",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 753,
+    "name": "Ruddy",
+    "position": "GK",
+    "team": "Newcastle",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 754,
+    "name": "George Hemmings",
+    "position": "MID",
+    "team": "Aston Villa",
+    "price": 4.5,
+    "form": 0.2,
+    "points": 2,
+    "selectedBy": 0
+  },
+  {
+    "id": 755,
+    "name": "Lacey",
+    "position": "MID",
+    "team": "Man Utd",
+    "price": 4.5,
+    "form": 0.2,
+    "points": 2,
+    "selectedBy": 0
+  },
+  {
+    "id": 756,
+    "name": "DaCosta",
+    "position": "MID",
+    "team": "Bournemouth",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 757,
+    "name": "Hollingshead",
+    "position": "GK",
+    "team": "Aston Villa",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 758,
+    "name": "Mohamadou Kanté",
+    "position": "MID",
+    "team": "West Ham",
+    "price": 4.5,
+    "form": 0,
+    "points": 3,
+    "selectedBy": 0
+  },
+  {
+    "id": 759,
+    "name": "Salmon",
+    "position": "DEF",
+    "team": "Arsenal",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 760,
+    "name": "Lucky",
+    "position": "DEF",
+    "team": "Liverpool",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 761,
+    "name": "Simmonds",
+    "position": "DEF",
+    "team": "Brighton",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 762,
+    "name": "Drakes-Thomas",
+    "position": "MID",
+    "team": "Crystal Palace",
+    "price": 4.5,
+    "form": 0.2,
+    "points": 2,
+    "selectedBy": 0
+  },
+  {
+    "id": 763,
+    "name": "Gray",
+    "position": "MID",
+    "team": "Man City",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 764,
+    "name": "Heskey",
+    "position": "MID",
+    "team": "Man City",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 765,
+    "name": "Shahar",
+    "position": "DEF",
+    "team": "Newcastle",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 766,
+    "name": "Olagunju",
+    "position": "DEF",
+    "team": "Wolves",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 767,
+    "name": "Rawlings",
+    "position": "MID",
+    "team": "Wolves",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 768,
+    "name": "Leon Routh",
+    "position": "DEF",
+    "team": "Aston Villa",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 769,
+    "name": "Bendito Mantato",
+    "position": "MID",
+    "team": "Man Utd",
+    "price": 4.5,
+    "form": 0,
+    "points": 1,
+    "selectedBy": 0
+  },
+  {
+    "id": 770,
+    "name": "Ridgeon",
+    "position": "MID",
+    "team": "Fulham",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 771,
+    "name": "Fletcher",
+    "position": "MID",
+    "team": "Man Utd",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 772,
+    "name": "Alabi",
+    "position": "MID",
+    "team": "Newcastle",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 773,
+    "name": "Benamar",
+    "position": "DEF",
+    "team": "Crystal Palace",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 774,
+    "name": "Jenson Jones",
+    "position": "DEF",
+    "team": "Sunderland",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 775,
+    "name": "Tutierov",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 776,
+    "name": "Pimlott",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 777,
+    "name": "Ojinnaka",
+    "position": "MID",
+    "team": "Wolves",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 778,
+    "name": "Sutherland",
+    "position": "MID",
+    "team": "Wolves",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 779,
+    "name": "Graham",
+    "position": "FWD",
+    "team": "Everton",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 780,
+    "name": "Casey",
+    "position": "FWD",
+    "team": "Crystal Palace",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 781,
+    "name": "Carroll",
+    "position": "DEF",
+    "team": "Aston Villa",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 782,
+    "name": "Forster",
+    "position": "GK",
+    "team": "Bournemouth",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 783,
+    "name": "Groß",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 5.5,
+    "form": 1.8,
+    "points": 7,
+    "selectedBy": 0
+  },
+  {
+    "id": 784,
+    "name": "Brierley",
+    "position": "MID",
+    "team": "Burnley",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 785,
+    "name": "Pablo",
+    "position": "FWD",
+    "team": "West Ham",
+    "price": 5.5,
+    "form": 1.2,
+    "points": 5,
+    "selectedBy": 0
+  },
+  {
+    "id": 786,
+    "name": "McNally",
+    "position": "GK",
+    "team": "Fulham",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 787,
+    "name": "Chambers",
+    "position": "MID",
+    "team": "Leeds",
+    "price": 4.4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 788,
+    "name": "Kukonki",
+    "position": "DEF",
+    "team": "Man Utd",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 789,
+    "name": "Merrick",
+    "position": "GK",
+    "team": "Chelsea",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 790,
+    "name": "Williams-Barnett",
+    "position": "MID",
+    "team": "Spurs",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 791,
+    "name": "Taty",
+    "position": "FWD",
+    "team": "West Ham",
+    "price": 5.5,
+    "form": 2.3,
+    "points": 7,
+    "selectedBy": 0
+  },
+  {
+    "id": 792,
+    "name": "Alysson",
+    "position": "MID",
+    "team": "Aston Villa",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 793,
+    "name": "King",
+    "position": "DEF",
+    "team": "Crystal Palace",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 794,
+    "name": "Alleyne",
+    "position": "DEF",
+    "team": "Man City",
+    "price": 4.3,
+    "form": 1.7,
+    "points": 5,
+    "selectedBy": 0
+  },
+  {
+    "id": 795,
+    "name": "Howell",
+    "position": "MID",
+    "team": "Brighton",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
     "id": 796,
     "name": "Gallagher",
     "position": "MID",
@@ -5778,6 +7958,116 @@
     "form": 2,
     "points": 4,
     "selectedBy": 0.1
+  },
+  {
+    "id": 797,
+    "name": "Furo",
+    "position": "FWD",
+    "team": "Brentford",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 798,
+    "name": "Imray",
+    "position": "DEF",
+    "team": "Crystal Palace",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 799,
+    "name": "Stevens",
+    "position": "MID",
+    "team": "Bournemouth",
+    "price": 4.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 800,
+    "name": "Jocelin.T",
+    "position": "MID",
+    "team": "Sunderland",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 801,
+    "name": "Tóth.A",
+    "position": "MID",
+    "team": "Bournemouth",
+    "price": 5,
+    "form": 1,
+    "points": 1,
+    "selectedBy": 0
+  },
+  {
+    "id": 802,
+    "name": "Lamadrid",
+    "position": "MID",
+    "team": "West Ham",
+    "price": 5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 803,
+    "name": "Sharman-Lowe",
+    "position": "GK",
+    "team": "Chelsea",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 804,
+    "name": "Souza",
+    "position": "DEF",
+    "team": "Spurs",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 805,
+    "name": "Lucca",
+    "position": "FWD",
+    "team": "Nott'm Forest",
+    "price": 5.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 806,
+    "name": "Mandas",
+    "position": "GK",
+    "team": "Bournemouth",
+    "price": 4,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
+  },
+  {
+    "id": 807,
+    "name": "Rayan",
+    "position": "MID",
+    "team": "Bournemouth",
+    "price": 5.5,
+    "form": 0,
+    "points": 0,
+    "selectedBy": 0
   },
   {
     "id": 808,

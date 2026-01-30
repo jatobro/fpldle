@@ -45,7 +45,9 @@ const sfc32 = (a: number, b: number, c: number, d: number) => {
   };
 };
 
-export const getDailyPlayer = (players: Player[], date: Date) => {
+export const getDailyPlayer = (players: Player[], date: Date): Player => {
+  const activePlayers = players.filter((p) => p.selectedBy > 0);
+
   const dateString = date.toISOString().split("T")[0];
   const seed = cyrb128(dateString);
 
@@ -56,7 +58,15 @@ export const getDailyPlayer = (players: Player[], date: Date) => {
 
   const random = sfc32(a, b, c, d);
 
-  const playerIndex = Math.floor(random() * players.length);
+  const maxId = Math.max(...activePlayers.map((p) => p.id));
+  const randomId = Math.floor(random() * maxId);
 
-  return players[playerIndex];
+  const exactPlayer = activePlayers.find((p) => p.id === randomId);
+
+  if (exactPlayer) {
+    return exactPlayer;
+  }
+
+  const fallbackPlayer = activePlayers.find((p) => p.id >= randomId);
+  return fallbackPlayer || activePlayers[0];
 };
