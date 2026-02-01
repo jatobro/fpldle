@@ -1,14 +1,85 @@
+import { POSITION_MAP, TEAMS } from "./consts";
 import type {
   Attribute,
   AttributeStatus,
   Player,
   Position,
   Team,
+  FPLPlayer,
+  FPLTeam,
 } from "./definitions";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
+
+export const transformPlayer = (
+  player: FPLPlayer,
+  teamMap: Map<number, Team>,
+): Player => {
+  return {
+    id: player.id,
+    name: player.web_name,
+    position: POSITION_MAP[player.element_type] || "MID",
+    team: teamMap.get(player.team) || "Arsenal",
+    price: player.now_cost / 10,
+    form: parseFloat(player.form) || 0,
+    points: player.total_points,
+    selectedBy: parseFloat(player.selected_by_percent) || 0,
+  };
+};
+
+export const validatePlayers = (players: Player[]) => {
+  const errors: string[] = [];
+
+  if (players.length < 100) {
+    errors.push(`Too few players: ${players.length} (expected more than 100)`);
+  }
+
+  players.forEach((player) => {
+    if (player.name.length === 0) {
+      errors.push(`Player ${player.id} has empty name`);
+    }
+
+    if (!TEAMS.includes(player.team)) {
+      errors.push(`Player ${player.name} has invalid team: ${player.team}`);
+    }
+    if (!["GK", "DEF", "MID", "FWD"].includes(player.position)) {
+      errors.push(
+        `Player ${player.name} has invalid position: ${player.position}`,
+      );
+    }
+  });
+
+  return {
+    valid: errors.length === 0,
+    errors,
+  };
+};
+
+export const validateTeams = (
+  teams: FPLTeam[],
+): { valid: boolean; errors: string[] } => {
+  const errors: string[] = [];
+  const apiTeamNames = new Set(teams.map((t) => t.name));
+
+  TEAMS.forEach((validTeam) => {
+    if (!apiTeamNames.has(validTeam)) {
+      errors.push(`Missing team: ${validTeam}`);
+    }
+  });
+
+  apiTeamNames.forEach((apiTeam) => {
+    if (!TEAMS.includes(apiTeam as Team)) {
+      errors.push(`Unexpected team in API: ${apiTeam}`);
+    }
+  });
+
+  return {
+    valid: errors.length === 0,
+    errors,
+  };
+};
 
 // Comparison Logic
 
@@ -125,7 +196,7 @@ const cyrb128 = (str: string) => {
 };
 
 const sfc32 = (a: number, b: number, c: number, d: number) => {
-  return function () {
+  return () => {
     a >>>= 0;
     b >>>= 0;
     c >>>= 0;

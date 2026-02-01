@@ -68,3 +68,21 @@ export interface GameState {
   gameStatus: GameStatus;
   date: string;
 }
+
+export interface FPLTeam {
+  id: number;
+  name: string;
+  short_name: string;
+}
+
+export interface FPLPlayer {
+  id: number;
+  web_name: string;
+  element_type: number;
+  team: number;
+  now_cost: number;
+  nation: string;
+  form: string;
+  total_points: number;
+  selected_by_percent: string;
+}
