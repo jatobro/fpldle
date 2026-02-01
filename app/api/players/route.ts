@@ -10,12 +10,19 @@ interface FPLApiResponse {
 export async function GET() {
   const response = await fetch(FPL_API_URL, { next: { revalidate: 86400 } });
 
-  if (!response.ok)
-    throw new Error(
+  if (!response.ok) {
+    console.error(
       `FPL API request failed: ${response.status} ${response.statusText}`,
     );
+    return Response.json(response.statusText);
+  }
 
   const data: FPLApiResponse = await response.json();
+
+  if (!data) {
+    console.error("FPL API data not found");
+    return Response.json("FPL API data not found");
+  }
 
   console.log(
     `\nFetched ${data.teams.length} teams and ${data.elements.length} players`,
