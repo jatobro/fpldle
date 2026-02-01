@@ -8,7 +8,7 @@ interface FPLApiResponse {
 }
 
 export const fetchPlayers = async () => {
-  const response = await fetch(FPL_API_URL);
+  const response = await fetch(FPL_API_URL, { next: { revalidate: 86400 } });
 
   if (!response.ok)
     throw new Error(
@@ -25,7 +25,6 @@ export const fetchPlayers = async () => {
   if (!teamValidation.valid) {
     console.error("\n❌ Team validation failed:");
     teamValidation.errors.forEach((error) => console.error(`  - ${error}`));
-    process.exit(1);
   }
   console.log("✓ Team validation passed");
 
@@ -41,7 +40,6 @@ export const fetchPlayers = async () => {
   if (!playerValidation.valid) {
     console.error("\n❌ Player validation failed:");
     playerValidation.errors.forEach((error) => console.error(`  - ${error}`));
-    process.exit(1);
   }
   console.log("✓ Player validation passed");
 

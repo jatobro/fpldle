@@ -1,7 +1,14 @@
-import { ComponentExample } from "@/components/component-example";
+import { fetchPlayers } from "@/lib/data";
 
 export const revalidate = 86400;
 
-export default function Page() {
-  return <ComponentExample />;
+export default async function Page() {
+  const players = await fetchPlayers();
+  return (
+    <div>
+      {players.map((player) => (
+        <div key={player.id}>{player.name}</div>
+      ))}
+    </div>
+  );
 }
