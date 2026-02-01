@@ -1,47 +1,7 @@
-import { FPL_API_URL } from "./consts";
-import { FPLTeam, FPLPlayer, Team } from "./definitions";
-import { validateTeams, validatePlayers, transformPlayer } from "./utils";
-
-interface FPLApiResponse {
-  teams: FPLTeam[];
-  elements: FPLPlayer[];
-}
+import { Player } from "./definitions";
 
 export const fetchPlayers = async () => {
-  const response = await fetch(FPL_API_URL, { next: { revalidate: 86400 } });
-
-  if (!response.ok)
-    throw new Error(
-      `FPL API request failed: ${response.status} ${response.statusText}`,
-    );
-
-  const data: FPLApiResponse = await response.json();
-
-  console.log(
-    `\nFetched ${data.teams.length} teams and ${data.elements.length} players`,
-  );
-
-  const teamValidation = validateTeams(data.teams);
-  if (!teamValidation.valid) {
-    console.error("\n❌ Team validation failed:");
-    teamValidation.errors.forEach((error) => console.error(`  - ${error}`));
-  }
-  console.log("✓ Team validation passed");
-
-  const teamMap = new Map<number, Team>(
-    data.teams.map((team) => [team.id, team.name as Team]),
-  );
-
-  const players = data.elements
-    .map((player) => transformPlayer(player, teamMap))
-    .sort((a, b) => a.id - b.id);
-
-  const playerValidation = validatePlayers(players);
-  if (!playerValidation.valid) {
-    console.error("\n❌ Player validation failed:");
-    playerValidation.errors.forEach((error) => console.error(`  - ${error}`));
-  }
-  console.log("✓ Player validation passed");
-
+  const response = await fetch("api/players");
+  const players: Player[] = await response.json();
   return players;
 };
