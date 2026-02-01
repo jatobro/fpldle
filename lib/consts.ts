@@ -1,5 +1,7 @@
 import { Position } from "./definitions";
 
+export const API_BASE_URL = "https://fpldle-omega.vercel.app/api";
+
 export const FPL_API_URL =
   "https://fantasy.premierleague.com/api/bootstrap-static/";
 
