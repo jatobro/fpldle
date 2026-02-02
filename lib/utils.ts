@@ -212,10 +212,10 @@ const sfc32 = (a: number, b: number, c: number, d: number) => {
   };
 };
 
-export const getDailyPlayer = (players: Player[], date: Date): Player => {
+export const getDailyPlayer = (players: Player[]): Player => {
   const activePlayers = players.filter((p) => p.selectedBy > 0);
 
-  const dateString = date.toISOString().split("T")[0];
+  const dateString = new Date().toDateString().split("T")[0];
   const seed = cyrb128(dateString);
 
   const a = seed;

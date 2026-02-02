@@ -4,7 +4,7 @@ import { getDailyPlayer } from "@/lib/utils";
 export default async function Page() {
   const players = await fetchPlayers();
 
-  const dailyPlayer = getDailyPlayer(players, new Date());
+  const dailyPlayer = getDailyPlayer(players);
   return (
     <div>
       <h1 className="text-2xl">{dailyPlayer.name}</h1>
