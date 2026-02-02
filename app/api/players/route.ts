@@ -8,7 +8,7 @@ interface FPLApiResponse {
   elements: FPLPlayer[];
 }
 export async function GET() {
-  const response = await fetch(FPL_API_URL, { next: { revalidate: 86400 } });
+  const response = await fetch(FPL_API_URL);
 
   if (!response.ok) {
     console.error(

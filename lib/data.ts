@@ -1,8 +1,11 @@
-import { API_BASE_URL } from "./consts";
 import { Player } from "./definitions";
 
-export const fetchPlayers = async () => {
-  const response = await fetch(`${API_BASE_URL}/players`);
-  const players: Player[] = await response.json();
+export const fetchPlayers = async (): Promise<Player[]> => {
+  const response = await fetch(`${process.env.API_BASE_URL}/players`, {
+    next: {
+      revalidate: 86400,
+    },
+  });
+  const players = await response.json();
   return players;
 };
