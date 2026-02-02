@@ -1,5 +1,5 @@
 import { fetchPlayers } from "@/lib/data";
-import { getDailyPlayer } from "@/lib/utils";
+import { getDailyPlayer } from "@/lib/game";
 
 export default async function Page() {
   const players = await fetchPlayers();
