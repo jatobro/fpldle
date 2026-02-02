@@ -126,7 +126,7 @@ const sfc32 = (a: number, b: number, c: number, d: number) => {
   };
 };
 
-export const getDailyPlayer = (players: Player[]): Player => {
+export const getTargetPlayer = (players: Player[]): Player => {
   const activePlayers = players.filter((p) => p.selectedBy > 0);
 
   const dateString = new Date().toDateString().split("T")[0];
