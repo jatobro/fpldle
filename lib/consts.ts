@@ -32,3 +32,10 @@ export const POSITION_MAP: Record<number, Position> = {
   3: "MID",
   4: "FWD",
 };
+
+export const POSITION_ORDER = {
+  GK: 1,
+  DEF: 2,
+  MID: 3,
+  FWD: 4,
+};

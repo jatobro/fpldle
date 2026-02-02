@@ -86,3 +86,8 @@ export interface FPLPlayer {
   total_points: number;
   selected_by_percent: string;
 }
+
+export interface FPLApiResponse {
+  teams: FPLTeam[];
+  elements: FPLPlayer[];
+}

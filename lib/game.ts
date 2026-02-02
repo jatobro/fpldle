@@ -1,17 +1,13 @@
-import type { Attribute, AttributeStatus, Player, Position, Team } from "./definitions";
+import type {
+  Attribute,
+  AttributeStatus,
+  Player,
+  Position,
+  Team,
+} from "./definitions";
+import { isPositionAdjacent } from "./utils";
 
-// Position ordering for comparison logic
-const POSITION_ORDER = {
-  GK: 1,
-  DEF: 2,
-  MID: 3,
-  FWD: 4,
-};
-
-// Comparison helper functions
-
-const isPositionAdjacent = (guess: Position, target: Position) =>
-  Math.abs(POSITION_ORDER[guess] - POSITION_ORDER[target]) === 1;
+// Comparison logic
 
 const comparePosition = (
   guess: Position,
@@ -89,7 +85,7 @@ export const comparePlayers = (guess: Player, target: Player): Attribute[] => [
   },
 ];
 
-// Hash and random generation functions for daily player selection
+// Daily player selection
 
 const cyrb128 = (str: string) => {
   let h1 = 1779033703;
@@ -130,7 +126,6 @@ const sfc32 = (a: number, b: number, c: number, d: number) => {
   };
 };
 
-// Daily player selection
 export const getDailyPlayer = (players: Player[]): Player => {
   const activePlayers = players.filter((p) => p.selectedBy > 0);
 
