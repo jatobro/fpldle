@@ -1,12 +1,18 @@
 import { fetchPlayers } from "@/lib/data";
+import { getDailyPlayer } from "@/lib/utils";
 
 export default async function Page() {
   const players = await fetchPlayers();
+
+  const dailyPlayer = getDailyPlayer(players, new Date());
   return (
     <div>
-      {players.map((player) => (
-        <div key={player.id}>{player.name}</div>
-      ))}
+      <h1 className="text-2xl">{dailyPlayer.name}</h1>
+      <div>
+        {players.map((player) => (
+          <div key={player.id}>{player.name}</div>
+        ))}
+      </div>
     </div>
   );
 }
