@@ -2,7 +2,6 @@ import { FPL_API_URL } from "@/lib/consts";
 import { FPLPlayer, FPLTeam } from "@/lib/definitions";
 import { Team } from "@/lib/definitions";
 import { validateTeams, validatePlayers, transformPlayer } from "@/lib/utils";
-import { error } from "console";
 
 interface FPLApiResponse {
   teams: FPLTeam[];
