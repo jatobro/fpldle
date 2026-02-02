@@ -53,14 +53,17 @@ export async function GET() {
     if (!playerValidation.valid) {
       console.error("\n❌ Player validation failed:");
       playerValidation.errors.forEach((error) => console.error(`  - ${error}`));
-      return Response.json(playerValidation.errors);
+      return Response.json(
+        {
+          message: "Player validation failed",
+          errors: playerValidation.errors,
+        },
+        { status: 500 },
+      );
     }
     console.log("✓ Player validation passed");
 
-    return Response.json(
-      { message: "Player validation failed", errors: playerValidation.errors },
-      { status: 500 },
-    );
+    return Response.json(players, { status: 200 });
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unexpected error";
     return Response.json({ message }, { status: 500 });
