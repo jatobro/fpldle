@@ -3,7 +3,6 @@ import { getDailyPlayer } from "@/lib/game";
 
 export default async function Page() {
   const players = await fetchPlayers();
-
   const dailyPlayer = getDailyPlayer(players);
   return (
     <div>
