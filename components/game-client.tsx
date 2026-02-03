@@ -59,6 +59,7 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
       <p className="text-sm text-muted-foreground">
         Attempts remaining: {MAX_ATTEMPTS - guesses.length}
       </p>
+
       {gameStatus === "playing" && (
         <div className="flex justify-center w-full">
           <PlayerSearch
@@ -66,6 +67,23 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
             onPlayerSelect={submitGuess}
             guessedPlayerIds={guessedPlayerIds}
           />
+        </div>
+      )}
+
+      {gameStatus === "won" && (
+        <div className="text-center p-8 bg-green-500 text-white rounded-lg">
+          <h2 className="text-3xl font-bold mb-2">🎉 You Won!</h2>
+          <p className="text-xl">The player was {targetPlayer.name}</p>
+          <p className="text-lg mt-2">
+            {guesses.length} / {MAX_ATTEMPTS} attempts
+          </p>
+        </div>
+      )}
+
+      {gameStatus === "lost" && (
+        <div className="text-center p-8 bg-red-500 text-white rounded-lg">
+          <h2 className="text-3xl font-bold mb-2">Game Over</h2>
+          <p className="text-xl">The player was {targetPlayer.name}</p>
         </div>
       )}
 
@@ -100,23 +118,6 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
               </div>
             </div>
           ))}
-        </div>
-      )}
-
-      {gameStatus === "won" && (
-        <div className="text-center p-8 bg-green-500 text-white rounded-lg">
-          <h2 className="text-3xl font-bold mb-2">🎉 You Won!</h2>
-          <p className="text-xl">The player was {targetPlayer.name}</p>
-          <p className="text-lg mt-2">
-            {guesses.length} / {MAX_ATTEMPTS} attempts
-          </p>
-        </div>
-      )}
-
-      {gameStatus === "lost" && (
-        <div className="text-center p-8 bg-red-500 text-white rounded-lg">
-          <h2 className="text-3xl font-bold mb-2">Game Over</h2>
-          <p className="text-xl">The player was {targetPlayer.name}</p>
         </div>
       )}
     </div>
