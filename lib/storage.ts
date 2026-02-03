@@ -1,14 +1,14 @@
 import { GameStatus, Guess } from "./definitions";
 import { getTodayDateString } from "./utils";
 
-export interface StoredGameState {
+interface StoredGameState {
   targetPlayerId: number;
   guesses: Guess[];
   gameStatus: GameStatus;
   completedAt: string | null;
 }
 
-export interface StorageData {
+interface StorageData {
   [date: string]: StoredGameState;
 }
 

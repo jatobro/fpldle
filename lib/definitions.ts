@@ -1,27 +1,4 @@
-export const MAX_ATTEMPTS = 6;
-
-export const TEAMS = [
-  "Arsenal",
-  "Aston Villa",
-  "Bournemouth",
-  "Brentford",
-  "Brighton",
-  "Burnley",
-  "Chelsea",
-  "Crystal Palace",
-  "Everton",
-  "Fulham",
-  "Leeds",
-  "Liverpool",
-  "Man City",
-  "Man Utd",
-  "Newcastle",
-  "Nott'm Forest",
-  "Spurs",
-  "Sunderland",
-  "West Ham",
-  "Wolves",
-] as const;
+import { TEAMS } from "./consts";
 
 export type Team = (typeof TEAMS)[number];
 
@@ -54,6 +31,8 @@ export interface Player {
   selectedBy: number;
 }
 
+// game
+
 export interface Guess {
   player: Player;
   attributes: Attribute[];
@@ -61,12 +40,7 @@ export interface Guess {
 
 export type GameStatus = "playing" | "won" | "lost";
 
-export interface GameState {
-  targetPlayer: Player;
-  guesses: Guess[];
-  gameStatus: GameStatus;
-  date: string;
-}
+// fpl api
 
 export interface FPLTeam {
   id: number;

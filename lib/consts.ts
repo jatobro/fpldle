@@ -1,5 +1,11 @@
 import { Position } from "./definitions";
 
+// config
+
+export const MAX_ATTEMPTS = 20;
+
+// fpl api
+
 export const FPL_API_URL =
   "https://fantasy.premierleague.com/api/bootstrap-static/";
 
@@ -25,6 +31,8 @@ export const TEAMS = [
   "West Ham",
   "Wolves",
 ] as const;
+
+// relations
 
 export const POSITION_MAP: Record<number, Position> = {
   1: "GK",

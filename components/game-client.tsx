@@ -2,13 +2,10 @@
 
 import { PlayerSearch } from "@/components/player-search";
 import { Spinner } from "@/components/ui/spinner";
-import {
-  Player,
-  AttributeStatus,
-  AttributeKey,
-  MAX_ATTEMPTS,
-} from "@/lib/definitions";
+import { MAX_ATTEMPTS } from "@/lib/consts";
+import { Player, AttributeStatus, AttributeKey } from "@/lib/definitions";
 import { useGameState } from "@/lib/use-game-state";
+import * as React from "react";
 
 interface GameClientProps {
   players: Player[];
@@ -42,8 +39,13 @@ const getDirectionArrow = (direction: "up" | "down" | null): string => {
 };
 
 export function GameClient({ players, targetPlayer }: GameClientProps) {
-  const { guesses, gameStatus, submitGuess, remainingAttempts, isLoaded } =
+  const { guesses, gameStatus, submitGuess, isLoaded } =
     useGameState(targetPlayer);
+
+  const guessedPlayerIds = React.useMemo(
+    () => new Set(guesses.map((guess) => guess.player.id)),
+    [guesses],
+  );
 
   if (!isLoaded)
     return (
@@ -55,10 +57,14 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
   return (
     <div className="space-y-2">
       <p className="text-sm text-muted-foreground">
-        Attempts remaining: {remainingAttempts}
+        Attempts remaining: {MAX_ATTEMPTS - guesses.length}
       </p>
       {gameStatus === "playing" && (
-        <PlayerSearch players={players} onPlayerSelect={submitGuess} />
+        <PlayerSearch
+          players={players}
+          onPlayerSelect={submitGuess}
+          guessedPlayerIds={guessedPlayerIds}
+        />
       )}
 
       {guesses.length > 0 && (
@@ -100,7 +106,7 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
           <h2 className="text-3xl font-bold mb-2">🎉 You Won!</h2>
           <p className="text-xl">The player was {targetPlayer.name}</p>
           <p className="text-lg mt-2">
-            {MAX_ATTEMPTS - remainingAttempts} / {MAX_ATTEMPTS} attempts
+            {guesses.length} / {MAX_ATTEMPTS} attempts
           </p>
         </div>
       )}
