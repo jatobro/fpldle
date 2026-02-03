@@ -57,38 +57,36 @@ export function PlayerSearch({
   );
 
   return (
-    <div className="flex justify-center w-full">
-      <Combobox
-        open={open}
-        onOpenChange={setOpen}
-        onInputValueChange={setQuery}
-        autoHighlight={true}
-      >
-        <ComboboxInput
-          placeholder="Search for player by surname..."
-          showTrigger={false}
-          className="w-full max-w-md"
-        />
-        <ComboboxContent>
-          {query !== "" && (
-            <ComboboxList>
-              {filteredPlayers.length <= 0 ? (
-                <ComboboxEmpty>No players found</ComboboxEmpty>
-              ) : (
-                filteredPlayers.map((player) => (
-                  <ComboboxItem
-                    key={player.id}
-                    value={player.name}
-                    onClick={() => handleSelect(player)}
-                  >
-                    {player.name}
-                  </ComboboxItem>
-                ))
-              )}
-            </ComboboxList>
-          )}
-        </ComboboxContent>
-      </Combobox>
-    </div>
+    <Combobox
+      open={open}
+      onOpenChange={setOpen}
+      onInputValueChange={setQuery}
+      autoHighlight={true}
+    >
+      <ComboboxInput
+        placeholder="Search for player by surname..."
+        showTrigger={false}
+        className="w-full max-w-md"
+      />
+      <ComboboxContent>
+        {query !== "" && (
+          <ComboboxList>
+            {filteredPlayers.length <= 0 ? (
+              <ComboboxEmpty>No players found</ComboboxEmpty>
+            ) : (
+              filteredPlayers.map((player) => (
+                <ComboboxItem
+                  key={player.id}
+                  value={player.name}
+                  onClick={() => handleSelect(player)}
+                >
+                  {player.name}
+                </ComboboxItem>
+              ))
+            )}
+          </ComboboxList>
+        )}
+      </ComboboxContent>
+    </Combobox>
   );
 }

@@ -60,11 +60,13 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
         Attempts remaining: {MAX_ATTEMPTS - guesses.length}
       </p>
       {gameStatus === "playing" && (
-        <PlayerSearch
-          players={players}
-          onPlayerSelect={submitGuess}
-          guessedPlayerIds={guessedPlayerIds}
-        />
+        <div className="flex justify-center w-full">
+          <PlayerSearch
+            players={players}
+            onPlayerSelect={submitGuess}
+            guessedPlayerIds={guessedPlayerIds}
+          />
+        </div>
       )}
 
       {guesses.length > 0 && (
