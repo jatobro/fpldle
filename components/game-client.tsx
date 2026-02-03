@@ -1,6 +1,7 @@
 "use client";
 
 import { PlayerSearch } from "@/components/player-search";
+import { Spinner } from "@/components/ui/spinner";
 import { Player, AttributeStatus, MAX_ATTEMPTS } from "@/lib/definitions";
 import { useGameState } from "@/lib/use-game-state";
 
@@ -21,8 +22,15 @@ const getStatusColor = (status: AttributeStatus): string => {
 };
 
 export function GameClient({ players, targetPlayer }: GameClientProps) {
-  const { guesses, gameStatus, submitGuess, remainingAttempts } =
+  const { guesses, gameStatus, submitGuess, remainingAttempts, isLoaded } =
     useGameState(targetPlayer);
+
+  if (!isLoaded)
+    return (
+      <div className="flex justify-center">
+        <Spinner />
+      </div>
+    );
 
   return (
     <div className="space-y-2">

@@ -3,10 +3,7 @@
 import { GameStatus, Guess, Player } from "@/lib/definitions";
 import { MAX_ATTEMPTS } from "@/lib/definitions";
 import { comparePlayers } from "@/lib/game";
-import {
-  loadGameState,
-  saveGameState,
-} from "@/lib/storage";
+import { loadGameState, saveGameState } from "@/lib/storage";
 import * as React from "react";
 
 export interface UseGameStateReturn {
@@ -15,6 +12,7 @@ export interface UseGameStateReturn {
   submitGuess: (player: Player) => void;
   resetGame: () => void;
   remainingAttempts: number;
+  isLoaded: boolean;
 }
 
 export function useGameState(targetPlayer: Player): UseGameStateReturn {
@@ -74,5 +72,6 @@ export function useGameState(targetPlayer: Player): UseGameStateReturn {
     submitGuess,
     resetGame,
     remainingAttempts,
+    isLoaded,
   };
 }
