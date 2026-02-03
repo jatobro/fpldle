@@ -39,8 +39,6 @@ export type AttributeStatus = "correct" | "close" | "incorrect";
 
 export interface Attribute {
   key: AttributeKey;
-  label: string;
-  value: string | number;
   status: AttributeStatus;
 }
 

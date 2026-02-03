@@ -49,38 +49,26 @@ const compareSelectedBy = (guess: number, target: number): AttributeStatus => {
 export const comparePlayers = (guess: Player, target: Player): Attribute[] => [
   {
     key: "position",
-    label: "Position",
-    value: guess.position,
     status: comparePosition(guess.position, target.position),
   },
   {
     key: "team",
-    label: "Team",
-    value: guess.team,
     status: compareTeam(guess.team, target.team),
   },
   {
     key: "price",
-    label: "Price",
-    value: guess.price,
     status: comparePrice(guess.price, target.price),
   },
   {
     key: "form",
-    label: "Form",
-    value: guess.form,
     status: compareForm(guess.form, target.form),
   },
   {
     key: "points",
-    label: "Points",
-    value: guess.points,
     status: comparePoints(guess.points, target.points),
   },
   {
     key: "selectedBy",
-    label: "Selected By",
-    value: guess.selectedBy,
     status: compareSelectedBy(guess.selectedBy, target.selectedBy),
   },
 ];

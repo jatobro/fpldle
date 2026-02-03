@@ -21,6 +21,15 @@ const getStatusColor = (status: AttributeStatus): string => {
   }
 };
 
+const ATTRIBUTE_LABELS: Record<string, string> = {
+  position: "Position",
+  team: "Team",
+  price: "Price",
+  form: "Form",
+  points: "Points",
+  selectedBy: "Selected By",
+};
+
 export function GameClient({ players, targetPlayer }: GameClientProps) {
   const { guesses, gameStatus, submitGuess, remainingAttempts, isLoaded } =
     useGameState(targetPlayer);
@@ -57,14 +66,15 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
                       attr.status,
                     )} rounded-md p-2 text-center`}
                   >
-                    <div className="text-xs opacity-80">{attr.label}</div>
+                    <div className="text-xs opacity-80">
+                      {ATTRIBUTE_LABELS[attr.key]}
+                    </div>
                     <div className="font-medium">
-                      {attr.key === "price" && typeof attr.value === "number"
-                        ? `£${attr.value.toFixed(1)}m`
-                        : attr.key === "selectedBy" &&
-                            typeof attr.value === "number"
-                          ? `${attr.value.toFixed(1)}%`
-                          : attr.value}
+                      {attr.key === "price"
+                        ? `£${guess.player.price.toFixed(1)}m`
+                        : attr.key === "selectedBy"
+                          ? `${guess.player.selectedBy.toFixed(1)}%`
+                          : guess.player[attr.key]}
                     </div>
                   </div>
                 ))}
