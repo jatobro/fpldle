@@ -2,7 +2,12 @@
 
 import { PlayerSearch } from "@/components/player-search";
 import { Spinner } from "@/components/ui/spinner";
-import { Player, AttributeStatus, MAX_ATTEMPTS } from "@/lib/definitions";
+import {
+  Player,
+  AttributeStatus,
+  AttributeKey,
+  MAX_ATTEMPTS,
+} from "@/lib/definitions";
 import { useGameState } from "@/lib/use-game-state";
 
 interface GameClientProps {
@@ -21,7 +26,7 @@ const getStatusColor = (status: AttributeStatus): string => {
   }
 };
 
-const ATTRIBUTE_LABELS: Record<string, string> = {
+const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
   position: "Position",
   team: "Team",
   price: "Price",
