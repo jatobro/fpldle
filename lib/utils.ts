@@ -26,3 +26,7 @@ export const transformFPLData = (data: FPLApiResponse): Player[] => {
 
 export const isPositionAdjacent = (guess: Position, target: Position) =>
   Math.abs(POSITION_ORDER[guess] - POSITION_ORDER[target]) === 1;
+
+export const getTodayDateString = () => {
+  return new Date().toISOString().split("T")[0];
+};

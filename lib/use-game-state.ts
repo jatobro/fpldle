@@ -3,6 +3,10 @@
 import { GameStatus, Guess, Player } from "@/lib/definitions";
 import { MAX_ATTEMPTS } from "@/lib/definitions";
 import { comparePlayers } from "@/lib/game";
+import {
+  loadGameState,
+  saveGameState,
+} from "@/lib/storage";
 import * as React from "react";
 
 export interface UseGameStateReturn {
@@ -16,6 +20,22 @@ export interface UseGameStateReturn {
 export function useGameState(targetPlayer: Player): UseGameStateReturn {
   const [guesses, setGuesses] = React.useState<Guess[]>([]);
   const [gameStatus, setGameStatus] = React.useState<GameStatus>("playing");
+  const [isLoaded, setIsLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    const savedState = loadGameState(targetPlayer.id);
+    if (savedState) {
+      setGuesses(savedState.guesses);
+      setGameStatus(savedState.gameStatus);
+    }
+    setIsLoaded(true);
+  }, [targetPlayer.id]);
+
+  React.useEffect(() => {
+    if (isLoaded) {
+      saveGameState(targetPlayer.id, guesses, gameStatus);
+    }
+  }, [guesses, gameStatus, targetPlayer.id, isLoaded]);
 
   const submitGuess = React.useCallback(
     (player: Player) => {
@@ -43,7 +63,8 @@ export function useGameState(targetPlayer: Player): UseGameStateReturn {
   const resetGame = React.useCallback(() => {
     setGuesses([]);
     setGameStatus("playing");
-  }, []);
+    saveGameState(targetPlayer.id, [], "playing");
+  }, [targetPlayer.id]);
 
   const remainingAttempts = MAX_ATTEMPTS - guesses.length;
 
