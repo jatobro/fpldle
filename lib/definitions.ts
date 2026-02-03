@@ -40,6 +40,7 @@ export type AttributeStatus = "correct" | "close" | "incorrect";
 export interface Attribute {
   key: AttributeKey;
   status: AttributeStatus;
+  direction: "up" | "down" | null;
 }
 
 export interface Player {

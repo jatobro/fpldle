@@ -35,6 +35,12 @@ const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
   selectedBy: "Selected By",
 };
 
+const getDirectionArrow = (direction: "up" | "down" | null): string => {
+  if (direction === "up") return "↑";
+  if (direction === "down") return "↓";
+  return "";
+};
+
 export function GameClient({ players, targetPlayer }: GameClientProps) {
   const { guesses, gameStatus, submitGuess, remainingAttempts, isLoaded } =
     useGameState(targetPlayer);
@@ -76,10 +82,10 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
                     </div>
                     <div className="font-medium">
                       {attr.key === "price"
-                        ? `£${guess.player.price.toFixed(1)}m`
+                        ? `£${guess.player.price.toFixed(1)}m ${getDirectionArrow(attr.direction)}`
                         : attr.key === "selectedBy"
-                          ? `${guess.player.selectedBy.toFixed(1)}%`
-                          : guess.player[attr.key]}
+                          ? `${guess.player.selectedBy.toFixed(1)}% ${getDirectionArrow(attr.direction)}`
+                          : `${guess.player[attr.key]} ${getDirectionArrow(attr.direction)}`}
                     </div>
                   </div>
                 ))}

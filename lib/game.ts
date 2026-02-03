@@ -7,69 +7,95 @@ import type {
 } from "./definitions";
 import { getTodayDateString, isPositionAdjacent } from "./utils";
 
+type ComparisonResult = {
+  status: AttributeStatus;
+  direction: "up" | "down" | null;
+};
+
 // Comparison logic
 
 const comparePosition = (
   guess: Position,
   target: Position,
-): AttributeStatus => {
-  if (guess === target) return "correct";
-  if (isPositionAdjacent(guess, target)) return "close";
-  return "incorrect";
+): ComparisonResult => {
+  if (guess === target) return { status: "correct", direction: null };
+  if (isPositionAdjacent(guess, target))
+    return { status: "close", direction: null };
+  return { status: "incorrect", direction: null };
 };
 
-const compareTeam = (guess: Team, target: Team): AttributeStatus =>
-  guess === target ? "correct" : "incorrect";
+const compareTeam = (guess: Team, target: Team): ComparisonResult =>
+  guess === target
+    ? { status: "correct", direction: null }
+    : { status: "incorrect", direction: null };
 
-const comparePrice = (guess: number, target: number): AttributeStatus => {
-  if (guess === target) return "correct";
+const comparePrice = (guess: number, target: number): ComparisonResult => {
+  if (guess === target) return { status: "correct", direction: null };
   const isClose = Math.abs(guess - target) <= 0.5;
-  return isClose ? "close" : "incorrect";
+  const status = isClose ? "close" : "incorrect";
+  const direction = guess < target ? "up" : "down";
+  return { status, direction };
 };
 
-const compareForm = (guess: number, target: number): AttributeStatus => {
-  if (guess === target) return "correct";
+const compareForm = (guess: number, target: number): ComparisonResult => {
+  if (guess === target) return { status: "correct", direction: null };
   const isClose = Math.abs(guess - target) <= 1.0;
-  return isClose ? "close" : "incorrect";
+  const status = isClose ? "close" : "incorrect";
+  const direction = guess < target ? "up" : "down";
+  return { status, direction };
 };
 
-const comparePoints = (guess: number, target: number): AttributeStatus => {
-  if (guess === target) return "correct";
+const comparePoints = (guess: number, target: number): ComparisonResult => {
+  if (guess === target) return { status: "correct", direction: null };
   const isClose = Math.abs(guess - target) <= 10;
-  return isClose ? "close" : "incorrect";
+  const status = isClose ? "close" : "incorrect";
+  const direction = guess < target ? "up" : "down";
+  return { status, direction };
 };
 
-const compareSelectedBy = (guess: number, target: number): AttributeStatus => {
-  if (guess === target) return "correct";
+const compareSelectedBy = (
+  guess: number,
+  target: number,
+): ComparisonResult => {
+  if (guess === target) return { status: "correct", direction: null };
   const isClose = Math.abs(guess - target) <= 5;
-  return isClose ? "close" : "incorrect";
+  const status = isClose ? "close" : "incorrect";
+  const direction = guess < target ? "up" : "down";
+  return { status, direction };
 };
 
 // Main comparison function
 export const comparePlayers = (guess: Player, target: Player): Attribute[] => [
   {
     key: "position",
-    status: comparePosition(guess.position, target.position),
+    status: comparePosition(guess.position, target.position).status,
+    direction: comparePosition(guess.position, target.position).direction,
   },
   {
     key: "team",
-    status: compareTeam(guess.team, target.team),
+    status: compareTeam(guess.team, target.team).status,
+    direction: compareTeam(guess.team, target.team).direction,
   },
   {
     key: "price",
-    status: comparePrice(guess.price, target.price),
+    status: comparePrice(guess.price, target.price).status,
+    direction: comparePrice(guess.price, target.price).direction,
   },
   {
     key: "form",
-    status: compareForm(guess.form, target.form),
+    status: compareForm(guess.form, target.form).status,
+    direction: compareForm(guess.form, target.form).direction,
   },
   {
     key: "points",
-    status: comparePoints(guess.points, target.points),
+    status: comparePoints(guess.points, target.points).status,
+    direction: comparePoints(guess.points, target.points).direction,
   },
   {
     key: "selectedBy",
-    status: compareSelectedBy(guess.selectedBy, target.selectedBy),
+    status: compareSelectedBy(guess.selectedBy, target.selectedBy).status,
+    direction: compareSelectedBy(guess.selectedBy, target.selectedBy)
+      .direction,
   },
 ];
 
