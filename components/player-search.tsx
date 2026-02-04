@@ -68,8 +68,8 @@ export function PlayerSearch({
         showTrigger={false}
         className="w-full max-w-md"
       />
-      <ComboboxContent>
-        {query !== "" && (
+      {query !== "" && (
+        <ComboboxContent>
           <ComboboxList>
             {filteredPlayers.length <= 0 ? (
               <ComboboxEmpty>No players found</ComboboxEmpty>
@@ -85,8 +85,8 @@ export function PlayerSearch({
               ))
             )}
           </ComboboxList>
-        )}
-      </ComboboxContent>
+        </ComboboxContent>
+      )}
     </Combobox>
   );
 }
