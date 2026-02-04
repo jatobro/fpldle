@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { MAX_ATTEMPTS } from "@/lib/consts";
-import { Player, Guess } from "@/lib/definitions";
+import { Player, Guess, UserStats } from "@/lib/definitions";
 import { getUserStats } from "@/lib/storage";
 import { generateShareText } from "@/lib/utils";
 import React from "react";
@@ -26,15 +26,21 @@ const config = {
   },
 } as const;
 
-export function GameFinishedCard({
+export const GameFinishedCard = ({
   status,
   targetPlayer,
   guesses,
-}: GameFinishedCardProps) {
+}: GameFinishedCardProps) => {
   const { bgColor, textColor, hoverColor, heading } = config[status];
-  const stats = getUserStats();
 
+  const [stats, setStats] = React.useState<UserStats>();
   const [shareFeedback, setShareFeedback] = React.useState(false);
+
+  React.useEffect(() => {
+    if (status === "won" || status === "lost") {
+      setStats(getUserStats());
+    }
+  }, [status]);
 
   const handleShare = () => {
     const shareText = generateShareText(status, guesses);
@@ -84,5 +90,4 @@ export function GameFinishedCard({
       </Button>
     </div>
   );
-}
-
+};

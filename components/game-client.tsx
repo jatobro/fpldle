@@ -28,7 +28,7 @@ const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
   selectedBy: "Selected By",
 };
 
-export function GameClient({ players, targetPlayer }: GameClientProps) {
+export const GameClient = ({ players, targetPlayer }: GameClientProps) => {
   const { guesses, gameStatus, submitGuess, isLoaded } =
     useGameState(targetPlayer);
 
@@ -51,11 +51,6 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
     }
   }, [players]);
 
-  const guessedPlayerIds = React.useMemo(
-    () => new Set(guesses.map((guess) => guess.player.id)),
-    [guesses],
-  );
-
   if (!isLoaded)
     return (
       <div className="flex justify-center">
@@ -64,18 +59,19 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
     );
 
   return (
-    <div className="space-y-2">
-      <p className="text-sm text-muted-foreground">
-        Attempts remaining: {MAX_ATTEMPTS - guesses.length}
-      </p>
-
+    <div className="space-y-3">
       {gameStatus === "playing" && (
-        <div className="flex justify-center w-full">
-          <PlayerSearch
-            players={players}
-            onPlayerSelect={submitGuess}
-            guessedPlayerIds={guessedPlayerIds}
-          />
+        <div className="space-y-2">
+          <p className="text-sm text-muted-foreground">
+            Attempts remaining: {MAX_ATTEMPTS - guesses.length}
+          </p>
+          <div className="flex justify-center">
+            <PlayerSearch
+              players={players}
+              guesses={guesses}
+              onPlayerSelect={submitGuess}
+            />
+          </div>
         </div>
       )}
 
@@ -88,7 +84,7 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
       )}
 
       {guesses.length > 0 && (
-        <div>
+        <div className="space-y-3">
           {guesses.map((guess, index) => (
             <div
               key={`${guess.player.id}-${index}`}
@@ -128,4 +124,4 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
       )}
     </div>
   );
-}
+};

@@ -8,21 +8,21 @@ import {
   ComboboxList,
   ComboboxEmpty,
 } from "@/components/ui/combobox";
-import { Player } from "@/lib/definitions";
+import { Guess, Player } from "@/lib/definitions";
 import Fuse from "fuse.js";
 import * as React from "react";
 
 interface PlayerSearchProps {
   players: Player[];
+  guesses: Guess[];
   onPlayerSelect: (player: Player) => void;
-  guessedPlayerIds: Set<number>;
 }
 
-export function PlayerSearch({
+export const PlayerSearch = ({
   players,
+  guesses,
   onPlayerSelect,
-  guessedPlayerIds,
-}: PlayerSearchProps) {
+}: PlayerSearchProps) => {
   const [query, setQuery] = React.useState("");
   const [open, setOpen] = React.useState(false);
 
@@ -35,6 +35,11 @@ export function PlayerSearch({
         minMatchCharLength: 1,
       }),
     [players],
+  );
+
+  const guessedPlayerIds = React.useMemo(
+    () => new Set(guesses.map((guess) => guess.player.id)),
+    [guesses],
   );
 
   const filteredPlayers = React.useMemo(
@@ -89,4 +94,4 @@ export function PlayerSearch({
       )}
     </Combobox>
   );
-}
+};
