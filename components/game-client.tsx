@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "./ui/button";
 import { PlayerSearch } from "@/components/player-search";
 import { Spinner } from "@/components/ui/spinner";
 import { MAX_ATTEMPTS } from "@/lib/consts";
@@ -127,12 +128,12 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
             {guesses.length} / {MAX_ATTEMPTS} attempts
           </p>
           {userStats && <StatsDisplay userStats={userStats} />}
-          <button
+          <Button
             onClick={handleShare}
             className="mt-4 bg-white text-green-600 font-semibold py-2 px-6 rounded-lg hover:bg-green-50 transition-colors"
           >
-            {shareFeedback ? "Copied!" : "Share"}
-          </button>
+            {shareFeedback ? "Copied!" : "Share FPLdle"}
+          </Button>
         </div>
       )}
 
@@ -145,7 +146,7 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
             onClick={handleShare}
             className="mt-4 bg-white text-red-600 font-semibold py-2 px-6 rounded-lg hover:bg-red-50 transition-colors"
           >
-            {shareFeedback ? "Copied!" : "Share"}
+            {shareFeedback ? "Copied!" : "Share FPLdle"}
           </button>
         </div>
       )}
