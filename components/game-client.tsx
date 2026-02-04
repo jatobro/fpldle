@@ -3,7 +3,7 @@
 import { PlayerSearch } from "@/components/player-search";
 import { Spinner } from "@/components/ui/spinner";
 import { MAX_ATTEMPTS } from "@/lib/consts";
-import { Player, AttributeStatus, AttributeKey } from "@/lib/definitions";
+import { Player, AttributeKey, Correctness } from "@/lib/definitions";
 import { useGameState } from "@/lib/use-game-state";
 import * as React from "react";
 
@@ -12,8 +12,8 @@ interface GameClientProps {
   targetPlayer: Player;
 }
 
-const getStatusColor = (status: AttributeStatus): string => {
-  switch (status) {
+const getStatusColor = (correctness: Correctness) => {
+  switch (correctness) {
     case "correct":
       return "bg-green-500 text-white";
     case "close":
@@ -100,7 +100,7 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
                   <div
                     key={attr.key}
                     className={`${getStatusColor(
-                      attr.status,
+                      attr.status.correctness,
                     )} rounded-md p-2 text-center`}
                   >
                     <div className="text-xs opacity-80">
@@ -108,10 +108,10 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
                     </div>
                     <div className="font-medium">
                       {attr.key === "price"
-                        ? `£${guess.player.price.toFixed(1)}m ${getDirectionArrow(attr.direction)}`
+                        ? `£${guess.player.price.toFixed(1)}m ${getDirectionArrow(attr.status.direction)}`
                         : attr.key === "selectedBy"
-                          ? `${guess.player.selectedBy.toFixed(1)}% ${getDirectionArrow(attr.direction)}`
-                          : `${guess.player[attr.key]} ${getDirectionArrow(attr.direction)}`}
+                          ? `${guess.player.selectedBy.toFixed(1)}% ${getDirectionArrow(attr.status.direction)}`
+                          : `${guess.player[attr.key]} ${getDirectionArrow(attr.status.direction)}`}
                     </div>
                   </div>
                 ))}

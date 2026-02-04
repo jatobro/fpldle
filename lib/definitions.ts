@@ -1,24 +1,10 @@
 import { TEAMS } from "./consts";
 
+// player
+
 export type Team = (typeof TEAMS)[number];
 
 export type Position = "GK" | "DEF" | "MID" | "FWD";
-
-export type AttributeKey =
-  | "position"
-  | "team"
-  | "price"
-  | "form"
-  | "points"
-  | "selectedBy";
-
-export type AttributeStatus = "correct" | "close" | "incorrect";
-
-export interface Attribute {
-  key: AttributeKey;
-  status: AttributeStatus;
-  direction: "up" | "down" | null;
-}
 
 export interface Player {
   id: number;
@@ -29,6 +15,28 @@ export interface Player {
   form: number;
   points: number;
   selectedBy: number;
+}
+
+// attributes
+
+export type AttributeKey =
+  | "position"
+  | "team"
+  | "price"
+  | "form"
+  | "points"
+  | "selectedBy";
+
+export type Correctness = "correct" | "close" | "incorrect";
+
+export interface AttributeStatus {
+  correctness: Correctness;
+  direction: "up" | "down" | null;
+}
+
+export interface Attribute {
+  key: AttributeKey;
+  status: AttributeStatus;
 }
 
 // game
