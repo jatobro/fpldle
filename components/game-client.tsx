@@ -3,28 +3,21 @@
 import { PlayerSearch } from "@/components/player-search";
 import { Spinner } from "@/components/ui/spinner";
 import { MAX_ATTEMPTS } from "@/lib/consts";
-import { Direction } from "@/lib/definitions";
-import { Player, AttributeKey, Correctness } from "@/lib/definitions";
-import { getYesterdayDateString } from "@/lib/utils";
-import { loadAllGames } from "@/lib/storage";
+import { Player, AttributeKey, UserStats } from "@/lib/definitions";
 import { useGameState } from "@/lib/hooks";
+import { loadAllGames, getUserStats } from "@/lib/storage";
+import {
+  getYesterdayDateString,
+  generateShareText,
+  getStatusColor,
+  getDirectionArrow,
+} from "@/lib/utils";
 import * as React from "react";
 
 interface GameClientProps {
   players: Player[];
   targetPlayer: Player;
 }
-
-const getStatusColor = (correctness: Correctness) => {
-  switch (correctness) {
-    case "correct":
-      return "bg-green-500 text-white";
-    case "close":
-      return "bg-yellow-500 text-white";
-    case "incorrect":
-      return "bg-gray-300 text-gray-700";
-  }
-};
 
 const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
   position: "Position",
@@ -35,17 +28,40 @@ const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
   selectedBy: "Selected By",
 };
 
-const getDirectionArrow = (direction: Direction): string => {
-  if (direction === "up") return "↑";
-  if (direction === "down") return "↓";
-  return "";
-};
+const StatsDisplay = ({ userStats }: { userStats: UserStats }) => (
+  <div className="grid grid-cols-3 gap-2 mt-4 text-sm">
+    <div className="bg-white/20 rounded-lg p-2">
+      <div className="font-bold">{userStats.gamesPlayed}</div>
+      <div className="opacity-80">Played</div>
+    </div>
+    <div className="bg-white/20 rounded-lg p-2">
+      <div className="font-bold">{userStats.winPercentage}%</div>
+      <div className="opacity-80">Win %</div>
+    </div>
+    <div className="bg-white/20 rounded-lg p-2">
+      <div className="font-bold">{userStats.currentStreak}</div>
+      <div className="opacity-80">Streak</div>
+    </div>
+    <div className="bg-white/20 rounded-lg p-2">
+      <div className="font-bold">{userStats.maxStreak}</div>
+      <div className="opacity-80">Max Streak</div>
+    </div>
+    <div className="bg-white/20 rounded-lg p-2 col-span-2">
+      <div className="font-bold">{userStats.averageGuesses}</div>
+      <div className="opacity-80">Avg Guesses</div>
+    </div>
+  </div>
+);
 
 export function GameClient({ players, targetPlayer }: GameClientProps) {
   const { guesses, gameStatus, submitGuess, isLoaded } =
     useGameState(targetPlayer);
 
-  const [yesterdayPlayer, setYesterdayPlayer] = React.useState<Player | null>(null);
+  const [yesterdayPlayer, setYesterdayPlayer] = React.useState<Player | null>(
+    null,
+  );
+  const [userStats, setUserStats] = React.useState<UserStats | null>(null);
+  const [shareFeedback, setShareFeedback] = React.useState(false);
 
   React.useEffect(() => {
     const allGames = loadAllGames();
@@ -53,12 +69,27 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
     const yesterdayGameState = allGames[yesterdayDate];
 
     if (yesterdayGameState?.targetPlayerId) {
-      const player = players.find((p) => p.id === yesterdayGameState.targetPlayerId);
+      const player = players.find(
+        (p) => p.id === yesterdayGameState.targetPlayerId,
+      );
       if (player) {
         setYesterdayPlayer(player);
       }
     }
   }, [players]);
+
+  React.useEffect(() => {
+    if (gameStatus === "won" || gameStatus === "lost") {
+      setUserStats(getUserStats());
+    }
+  }, [gameStatus]);
+
+  const handleShare = () => {
+    const shareText = generateShareText(gameStatus, guesses);
+    navigator.clipboard.writeText(shareText);
+    setShareFeedback(true);
+    setTimeout(() => setShareFeedback(false), 2000);
+  };
 
   const guessedPlayerIds = React.useMemo(
     () => new Set(guesses.map((guess) => guess.player.id)),
@@ -95,6 +126,13 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
           <p className="text-lg mt-2">
             {guesses.length} / {MAX_ATTEMPTS} attempts
           </p>
+          {userStats && <StatsDisplay userStats={userStats} />}
+          <button
+            onClick={handleShare}
+            className="mt-4 bg-white text-green-600 font-semibold py-2 px-6 rounded-lg hover:bg-green-50 transition-colors"
+          >
+            {shareFeedback ? "Copied!" : "Share"}
+          </button>
         </div>
       )}
 
@@ -102,6 +140,13 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
         <div className="text-center p-8 bg-red-500 text-white rounded-lg">
           <h2 className="text-3xl font-bold mb-2">Game Over</h2>
           <p className="text-xl">The player was {targetPlayer.name}</p>
+          {userStats && <StatsDisplay userStats={userStats} />}
+          <button
+            onClick={handleShare}
+            className="mt-4 bg-white text-red-600 font-semibold py-2 px-6 rounded-lg hover:bg-red-50 transition-colors"
+          >
+            {shareFeedback ? "Copied!" : "Share"}
+          </button>
         </div>
       )}
 

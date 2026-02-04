@@ -50,6 +50,15 @@ export interface Guess {
 
 export type GameStatus = "playing" | "won" | "lost";
 
+export interface UserStats {
+  gamesPlayed: number;
+  gamesWon: number;
+  winPercentage: number;
+  currentStreak: number;
+  maxStreak: number;
+  averageGuesses: number;
+}
+
 // fpl api
 
 export interface FPLTeam {

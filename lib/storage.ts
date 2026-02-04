@@ -1,4 +1,4 @@
-import { GameStatus, Guess } from "./definitions";
+import { GameStatus, Guess, UserStats } from "./definitions";
 import { getTodayDateString } from "./utils";
 
 interface StoredGameState {
@@ -102,5 +102,87 @@ export const clearOldGames = (daysToKeep: number = 30): void => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
   } catch (error) {
     console.error("Failed to clear old games:", error);
+  }
+};
+
+export const getUserStats = (): UserStats => {
+  if (typeof window === "undefined") {
+    return {
+      gamesPlayed: 0,
+      gamesWon: 0,
+      winPercentage: 0,
+      currentStreak: 0,
+      maxStreak: 0,
+      averageGuesses: 0,
+    };
+  }
+
+  try {
+    const data = loadAllGames();
+    const dates = Object.keys(data).sort();
+
+    if (dates.length === 0)
+      return {
+        gamesPlayed: 0,
+        gamesWon: 0,
+        winPercentage: 0,
+        currentStreak: 0,
+        maxStreak: 0,
+        averageGuesses: 0,
+      };
+
+    let gamesPlayed = 0;
+    let gamesWon = 0;
+    let totalGuesses = 0;
+    let currentStreak = 0;
+    let maxStreak = 0;
+
+    dates.forEach((date) => {
+      const game = data[date];
+      if (game.gameStatus === "won" || game.gameStatus === "lost") {
+        gamesPlayed++;
+
+        if (game.gameStatus === "won") {
+          gamesWon++;
+          totalGuesses += game.guesses.length;
+
+          if (currentStreak >= 0) {
+            currentStreak++;
+          } else {
+            currentStreak = 1;
+          }
+
+          if (currentStreak > maxStreak) {
+            maxStreak = currentStreak;
+          }
+        } else {
+          currentStreak = 0;
+        }
+      }
+    });
+
+    const winPercentage =
+      gamesPlayed > 0 ? Math.round((gamesWon / gamesPlayed) * 100) : 0;
+    const averageGuesses =
+      gamesWon > 0 ? Math.round(totalGuesses / gamesWon) : 0;
+
+    return {
+      gamesPlayed,
+      gamesWon,
+      winPercentage,
+      currentStreak,
+      maxStreak,
+      averageGuesses,
+    };
+  } catch (error) {
+    console.error("Failed to load user stats:", error);
+    return {
+      gamesPlayed: 0,
+      gamesWon: 0,
+      winPercentage: 0,
+      currentStreak: 0,
+      maxStreak: 0,
+      averageGuesses: 0,
+    };
   }
 };

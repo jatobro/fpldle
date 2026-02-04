@@ -1,5 +1,14 @@
-import { POSITION_ORDER, POSITION_MAP } from "./consts";
-import { Team, Position, Player, FPLApiResponse } from "./definitions";
+import { POSITION_ORDER, POSITION_MAP, MAX_ATTEMPTS } from "./consts";
+import {
+  Team,
+  Position,
+  Player,
+  FPLApiResponse,
+  Guess,
+  GameStatus,
+  Correctness,
+  Direction,
+} from "./definitions";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -24,8 +33,7 @@ export const transformFPLData = (data: FPLApiResponse): Player[] => {
   }));
 };
 
-export const isPositionAdjacent = (guess: Position, target: Position) =>
-  Math.abs(POSITION_ORDER[guess] - POSITION_ORDER[target]) === 1;
+// date helpers
 
 export const getTodayDateString = () => new Date().toISOString().split("T")[0];
 
@@ -33,4 +41,70 @@ export const getYesterdayDateString = () => {
   const date = new Date();
   date.setDate(date.getDate() - 1);
   return date.toISOString().split("T")[0];
+};
+
+// ui helpers
+
+export const isPositionAdjacent = (guess: Position, target: Position) =>
+  Math.abs(POSITION_ORDER[guess] - POSITION_ORDER[target]) === 1;
+
+export const getDirectionArrow = (direction: Direction): string => {
+  if (direction === "up") return "↑";
+  if (direction === "down") return "↓";
+  return "";
+};
+
+export const getStatusColor = (correctness: Correctness) => {
+  switch (correctness) {
+    case "correct":
+      return "bg-green-500 text-white";
+    case "close":
+      return "bg-yellow-500 text-white";
+    case "incorrect":
+      return "bg-gray-300 text-gray-700";
+  }
+};
+
+// share text
+
+const getGameNumber = () => {
+  const launchDate = new Date("2025-01-01");
+  const today = new Date();
+  const diffTime = today.getTime() - launchDate.getTime();
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  return diffDays + 1;
+};
+
+const correctnessEmoji = (correctness: Correctness) => {
+  switch (correctness) {
+    case "correct":
+      return "🟩";
+    case "close":
+      return "🟨";
+    case "incorrect":
+      return "⬜";
+    default:
+      return "⬜";
+  }
+};
+
+export const generateShareText = (gameStatus: GameStatus, guesses: Guess[]) => {
+  let result = `FPLdle #${getGameNumber()} `;
+
+  if (gameStatus === "won") {
+    result += `${guesses.length}/${MAX_ATTEMPTS}`;
+  } else {
+    result += `X/${MAX_ATTEMPTS}`;
+  }
+
+  result += "\n\n";
+
+  guesses.forEach((guess) => {
+    guess.attributes.forEach((attr) => {
+      result += correctnessEmoji(attr.status.correctness);
+    });
+    result += "\n";
+  });
+
+  return result;
 };
