@@ -6,13 +6,7 @@ import { Spinner } from "@/components/ui/spinner";
 import { MAX_ATTEMPTS } from "@/lib/consts";
 import { Player, AttributeKey } from "@/lib/definitions";
 import { useGameState } from "@/lib/hooks";
-import { loadAllGames } from "@/lib/storage";
-import {
-  getYesterdayDateString,
-  getStatusColor,
-  getDirectionArrow,
-} from "@/lib/utils";
-import * as React from "react";
+import { getStatusColor, getDirectionArrow } from "@/lib/utils";
 
 interface GameClientProps {
   players: Player[];
@@ -31,25 +25,6 @@ const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
 export const GameClient = ({ players, targetPlayer }: GameClientProps) => {
   const { guesses, gameStatus, submitGuess, isLoaded } =
     useGameState(targetPlayer);
-
-  const [yesterdayPlayer, setYesterdayPlayer] = React.useState<Player | null>(
-    null,
-  );
-
-  React.useEffect(() => {
-    const allGames = loadAllGames();
-    const yesterdayDate = getYesterdayDateString();
-    const yesterdayGameState = allGames[yesterdayDate];
-
-    if (yesterdayGameState?.targetPlayerId) {
-      const player = players.find(
-        (p) => p.id === yesterdayGameState.targetPlayerId,
-      );
-      if (player) {
-        setYesterdayPlayer(player);
-      }
-    }
-  }, [players]);
 
   if (!isLoaded)
     return (
@@ -115,12 +90,6 @@ export const GameClient = ({ players, targetPlayer }: GameClientProps) => {
             </div>
           ))}
         </div>
-      )}
-
-      {yesterdayPlayer && (
-        <p className="text-sm text-muted-foreground text-center">
-          Yesterday&apos;s player was {yesterdayPlayer.name}
-        </p>
       )}
     </div>
   );
