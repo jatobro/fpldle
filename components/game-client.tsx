@@ -5,7 +5,9 @@ import { Spinner } from "@/components/ui/spinner";
 import { MAX_ATTEMPTS } from "@/lib/consts";
 import { Direction } from "@/lib/definitions";
 import { Player, AttributeKey, Correctness } from "@/lib/definitions";
-import { useGameState } from "@/lib/use-game-state";
+import { getYesterdayDateString } from "@/lib/utils";
+import { loadAllGames } from "@/lib/storage";
+import { useGameState } from "@/lib/hooks";
 import * as React from "react";
 
 interface GameClientProps {
@@ -42,6 +44,21 @@ const getDirectionArrow = (direction: Direction): string => {
 export function GameClient({ players, targetPlayer }: GameClientProps) {
   const { guesses, gameStatus, submitGuess, isLoaded } =
     useGameState(targetPlayer);
+
+  const [yesterdayPlayer, setYesterdayPlayer] = React.useState<Player | null>(null);
+
+  React.useEffect(() => {
+    const allGames = loadAllGames();
+    const yesterdayDate = getYesterdayDateString();
+    const yesterdayGameState = allGames[yesterdayDate];
+
+    if (yesterdayGameState?.targetPlayerId) {
+      const player = players.find((p) => p.id === yesterdayGameState.targetPlayerId);
+      if (player) {
+        setYesterdayPlayer(player);
+      }
+    }
+  }, [players]);
 
   const guessedPlayerIds = React.useMemo(
     () => new Set(guesses.map((guess) => guess.player.id)),
@@ -120,6 +137,12 @@ export function GameClient({ players, targetPlayer }: GameClientProps) {
             </div>
           ))}
         </div>
+      )}
+
+      {yesterdayPlayer && (
+        <p className="text-sm text-muted-foreground text-center">
+          Yesterday&apos;s player was {yesterdayPlayer.name}
+        </p>
       )}
     </div>
   );

@@ -28,3 +28,9 @@ export const isPositionAdjacent = (guess: Position, target: Position) =>
   Math.abs(POSITION_ORDER[guess] - POSITION_ORDER[target]) === 1;
 
 export const getTodayDateString = () => new Date().toISOString().split("T")[0];
+
+export const getYesterdayDateString = () => {
+  const date = new Date();
+  date.setDate(date.getDate() - 1);
+  return date.toISOString().split("T")[0];
+};

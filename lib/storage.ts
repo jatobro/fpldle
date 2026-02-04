@@ -42,10 +42,7 @@ export const saveGameState = (
   }
 };
 
-export const loadGameState = (
-  targetPlayerId: number,
-  date?: string,
-): StoredGameState | null => {
+export const loadGameState = (targetPlayerId: number, date?: string) => {
   if (typeof window === "undefined") return null;
 
   const dateString = date || getTodayDateString();
