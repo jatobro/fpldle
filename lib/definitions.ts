@@ -29,9 +29,11 @@ export type AttributeKey =
 
 export type Correctness = "correct" | "close" | "incorrect";
 
+export type Direction = "up" | "down" | null;
+
 export interface AttributeStatus {
   correctness: Correctness;
-  direction: "up" | "down" | null;
+  direction: Direction;
 }
 
 export interface Attribute {

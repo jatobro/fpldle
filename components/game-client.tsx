@@ -3,6 +3,7 @@
 import { PlayerSearch } from "@/components/player-search";
 import { Spinner } from "@/components/ui/spinner";
 import { MAX_ATTEMPTS } from "@/lib/consts";
+import { Direction } from "@/lib/definitions";
 import { Player, AttributeKey, Correctness } from "@/lib/definitions";
 import { useGameState } from "@/lib/use-game-state";
 import * as React from "react";
@@ -32,7 +33,7 @@ const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
   selectedBy: "Selected By",
 };
 
-const getDirectionArrow = (direction: "up" | "down" | null): string => {
+const getDirectionArrow = (direction: Direction): string => {
   if (direction === "up") return "↑";
   if (direction === "down") return "↓";
   return "";
