@@ -106,5 +106,7 @@ export const generateShareText = (gameStatus: GameStatus, guesses: Guess[]) => {
     result += "\n";
   });
 
+  result += `\n${process.env.NEXT_PUBLIC_APP_URL}`;
+
   return result;
 };
