@@ -62,12 +62,7 @@ export const PlayerSearch = ({
   );
 
   return (
-    <Combobox
-      open={open}
-      onOpenChange={setOpen}
-      onInputValueChange={setQuery}
-      autoHighlight={true}
-    >
+    <Combobox open={open} onOpenChange={setOpen} onInputValueChange={setQuery}>
       <ComboboxInput
         placeholder="Search for player by surname..."
         showTrigger={false}
@@ -87,7 +82,9 @@ export const PlayerSearch = ({
                 >
                   <span className="flex items-center justify-between w-full gap-2">
                     <span>{player.name}</span>
-                    <span className="text-muted-foreground text-xs">{player.team}</span>
+                    <span className="text-muted-foreground text-xs">
+                      {player.team}
+                    </span>
                   </span>
                 </ComboboxItem>
               ))
