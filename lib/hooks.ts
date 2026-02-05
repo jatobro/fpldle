@@ -15,25 +15,29 @@ interface UseGameStateReturn {
   isLoaded: boolean;
 }
 
-export function useGameState(targetPlayer: Player): UseGameStateReturn {
+export function useGameState(
+  dateString: string,
+  targetPlayer: Player,
+): UseGameStateReturn {
   const [guesses, setGuesses] = React.useState<Guess[]>([]);
   const [gameStatus, setGameStatus] = React.useState<GameStatus>("playing");
   const [userStats, setUserStats] = React.useState<UserStats | null>(null);
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   React.useEffect(() => {
-    const savedState = loadGameState(targetPlayer.id);
+    const savedState = loadGameState(dateString, targetPlayer.id);
     if (savedState) {
       setGuesses(savedState.guesses);
       setGameStatus(savedState.gameStatus);
     }
     setUserStats(getUserStats());
     setIsLoaded(true);
-  }, [targetPlayer.id]);
+  }, [dateString, targetPlayer.id]);
 
   React.useEffect(() => {
-    if (isLoaded) saveGameState(targetPlayer.id, guesses, gameStatus);
-  }, [guesses, gameStatus, targetPlayer.id, isLoaded]);
+    if (isLoaded)
+      saveGameState(dateString, targetPlayer.id, guesses, gameStatus);
+  }, [isLoaded, dateString, targetPlayer.id, guesses, gameStatus]);
 
   React.useEffect(() => {
     if (gameStatus === "won" || gameStatus === "lost")
@@ -71,8 +75,8 @@ export function useGameState(targetPlayer: Player): UseGameStateReturn {
   const resetGame = React.useCallback(() => {
     setGuesses([]);
     setGameStatus("playing");
-    saveGameState(targetPlayer.id, [], "playing");
-  }, [targetPlayer.id]);
+    saveGameState(dateString, targetPlayer.id, [], "playing");
+  }, [dateString, targetPlayer.id]);
 
   return {
     guesses,

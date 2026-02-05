@@ -5,7 +5,7 @@ import type {
   Position,
   Team,
 } from "./definitions";
-import { getTodayDateString, isPositionAdjacent } from "./utils";
+import { isPositionAdjacent } from "./utils";
 
 // Comparison logic
 
@@ -125,10 +125,12 @@ const sfc32 = (a: number, b: number, c: number, d: number) => {
   };
 };
 
-export const getTargetPlayer = (players: Player[]): Player => {
+export const getTargetPlayer = (
+  players: Player[],
+  dateString: string,
+): Player => {
   const activePlayers = players.filter((p) => p.selectedBy > 0);
 
-  const dateString = getTodayDateString();
   const seed = cyrb128(dateString);
 
   const a = seed;

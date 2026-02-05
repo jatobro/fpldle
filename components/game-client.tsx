@@ -10,6 +10,7 @@ import { getStatusColor, getDirectionArrow } from "@/lib/utils";
 
 interface GameClientProps {
   players: Player[];
+  dateString: string;
   targetPlayer: Player;
 }
 
@@ -22,9 +23,13 @@ const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
   selectedBy: "Selected By",
 };
 
-export const GameClient = ({ players, targetPlayer }: GameClientProps) => {
+export const GameClient = ({
+  players,
+  dateString,
+  targetPlayer,
+}: GameClientProps) => {
   const { guesses, gameStatus, userStats, submitGuess, isLoaded } =
-    useGameState(targetPlayer);
+    useGameState(dateString, targetPlayer);
 
   if (!isLoaded)
     return (

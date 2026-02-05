@@ -1,5 +1,4 @@
 import { GameStatus, Guess, UserStats } from "./definitions";
-import { getTodayDateString } from "./utils";
 
 interface StoredGameState {
   targetPlayerId: number;
@@ -15,14 +14,12 @@ interface StorageData {
 const STORAGE_KEY = "fpldle-games";
 
 export const saveGameState = (
+  dateString: string,
   targetPlayerId: number,
   guesses: Guess[],
   gameStatus: GameStatus,
-  date?: string,
 ): void => {
   if (typeof window === "undefined") return;
-
-  const dateString = date || getTodayDateString();
 
   try {
     const existingData = loadAllGames();
@@ -42,10 +39,8 @@ export const saveGameState = (
   }
 };
 
-export const loadGameState = (targetPlayerId: number, date?: string) => {
+export const loadGameState = (dateString: string, targetPlayerId: number) => {
   if (typeof window === "undefined") return null;
-
-  const dateString = date || getTodayDateString();
 
   try {
     const storedData = localStorage.getItem(STORAGE_KEY);

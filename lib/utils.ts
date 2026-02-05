@@ -33,16 +33,6 @@ export const transformFPLData = (data: FPLApiResponse): Player[] => {
   }));
 };
 
-// date helpers
-
-export const getTodayDateString = () => new Date().toISOString().split("T")[0];
-
-export const getYesterdayDateString = () => {
-  const date = new Date();
-  date.setDate(date.getDate() - 1);
-  return date.toISOString().split("T")[0];
-};
-
 // ui helpers
 
 export const isPositionAdjacent = (guess: Position, target: Position) =>
