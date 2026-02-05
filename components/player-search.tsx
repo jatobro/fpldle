@@ -85,7 +85,10 @@ export const PlayerSearch = ({
                   value={player.name}
                   onClick={() => handleSelect(player)}
                 >
-                  {player.name}
+                  <span className="flex items-center justify-between w-full gap-2">
+                    <span>{player.name}</span>
+                    <span className="text-muted-foreground text-xs">{player.team}</span>
+                  </span>
                 </ComboboxItem>
               ))
             )}
