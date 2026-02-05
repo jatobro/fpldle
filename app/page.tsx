@@ -2,6 +2,8 @@ import { GameClient } from "@/components/game-client";
 import { fetchPlayers } from "@/lib/data";
 import { getTargetPlayer } from "@/lib/game";
 
+export const dynamic = "force-dynamic";
+
 export default async function Page() {
   const players = await fetchPlayers();
   const targetPlayer = getTargetPlayer(players);
