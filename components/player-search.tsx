@@ -62,7 +62,12 @@ export const PlayerSearch = ({
   );
 
   return (
-    <Combobox open={open} onOpenChange={setOpen} onInputValueChange={setQuery}>
+    <Combobox
+      open={open}
+      onOpenChange={setOpen}
+      onInputValueChange={setQuery}
+      autoHighlight={true}
+    >
       <ComboboxInput
         placeholder="Search for player by surname..."
         showTrigger={false}
