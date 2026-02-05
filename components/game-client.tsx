@@ -23,7 +23,7 @@ const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
 };
 
 export const GameClient = ({ players, targetPlayer }: GameClientProps) => {
-  const { guesses, gameStatus, submitGuess, isLoaded } =
+  const { guesses, gameStatus, userStats, submitGuess, isLoaded } =
     useGameState(targetPlayer);
 
   if (!isLoaded)
@@ -55,6 +55,7 @@ export const GameClient = ({ players, targetPlayer }: GameClientProps) => {
           status={gameStatus}
           targetPlayer={targetPlayer}
           guesses={guesses}
+          userStats={userStats}
         />
       )}
 

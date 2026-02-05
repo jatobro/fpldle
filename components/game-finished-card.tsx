@@ -2,7 +2,6 @@ import { StatsDisplay } from "./stats-display";
 import { Button } from "./ui/button";
 import { MAX_ATTEMPTS } from "@/lib/consts";
 import { Player, Guess, UserStats } from "@/lib/definitions";
-import { getUserStats } from "@/lib/storage";
 import { generateShareText } from "@/lib/utils";
 import React from "react";
 
@@ -10,6 +9,7 @@ interface GameFinishedCardProps {
   status: "won" | "lost";
   targetPlayer: Player;
   guesses: Guess[];
+  userStats: UserStats | null;
 }
 
 const config = {
@@ -31,17 +31,11 @@ export const GameFinishedCard = ({
   status,
   targetPlayer,
   guesses,
+  userStats,
 }: GameFinishedCardProps) => {
   const { bgColor, textColor, hoverColor, heading } = config[status];
 
-  const [stats, setStats] = React.useState<UserStats>();
   const [shareFeedback, setShareFeedback] = React.useState(false);
-
-  React.useEffect(() => {
-    if (status === "won" || status === "lost") {
-      setStats(getUserStats());
-    }
-  }, [status]);
 
   const handleShare = () => {
     const shareText = generateShareText(status, guesses);
@@ -59,7 +53,7 @@ export const GameFinishedCard = ({
           {guesses.length} / {MAX_ATTEMPTS} attempts
         </p>
       )}
-      {stats && <StatsDisplay stats={stats} />}
+      {userStats && <StatsDisplay userStats={userStats} />}
       <Button
         onClick={handleShare}
         className={`mt-4 bg-white ${textColor} font-semibold py-2 px-6 rounded-lg ${hoverColor} transition-colors`}

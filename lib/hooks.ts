@@ -1,14 +1,15 @@
 "use client";
 
 import { MAX_ATTEMPTS } from "@/lib/consts";
-import { GameStatus, Guess, Player } from "@/lib/definitions";
+import { GameStatus, Guess, Player, UserStats } from "@/lib/definitions";
 import { comparePlayers } from "@/lib/game";
-import { loadGameState, saveGameState } from "@/lib/storage";
+import { getUserStats, loadGameState, saveGameState } from "@/lib/storage";
 import * as React from "react";
 
 interface UseGameStateReturn {
   guesses: Guess[];
   gameStatus: GameStatus;
+  userStats: UserStats | null;
   submitGuess: (player: Player) => void;
   resetGame: () => void;
   isLoaded: boolean;
@@ -17,6 +18,7 @@ interface UseGameStateReturn {
 export function useGameState(targetPlayer: Player): UseGameStateReturn {
   const [guesses, setGuesses] = React.useState<Guess[]>([]);
   const [gameStatus, setGameStatus] = React.useState<GameStatus>("playing");
+  const [userStats, setUserStats] = React.useState<UserStats | null>(null);
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   React.useEffect(() => {
@@ -25,12 +27,15 @@ export function useGameState(targetPlayer: Player): UseGameStateReturn {
       setGuesses(savedState.guesses);
       setGameStatus(savedState.gameStatus);
     }
+    setUserStats(getUserStats());
     setIsLoaded(true);
   }, [targetPlayer.id]);
 
   React.useEffect(() => {
     if (isLoaded) {
       saveGameState(targetPlayer.id, guesses, gameStatus);
+      if (gameStatus === "won" || gameStatus === "lost")
+        setUserStats(getUserStats());
     }
   }, [guesses, gameStatus, targetPlayer.id, isLoaded]);
 
@@ -71,6 +76,7 @@ export function useGameState(targetPlayer: Player): UseGameStateReturn {
   return {
     guesses,
     gameStatus,
+    userStats,
     submitGuess,
     resetGame,
     isLoaded,

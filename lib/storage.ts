@@ -105,31 +105,14 @@ export const clearOldGames = (daysToKeep: number = 30): void => {
   }
 };
 
-export const getUserStats = (): UserStats => {
-  if (typeof window === "undefined") {
-    return {
-      gamesPlayed: 0,
-      gamesWon: 0,
-      winPercentage: 0,
-      currentStreak: 0,
-      maxStreak: 0,
-      averageGuesses: 0,
-    };
-  }
+export const getUserStats = (): UserStats | null => {
+  if (typeof window === "undefined") return null;
 
   try {
     const data = loadAllGames();
     const dates = Object.keys(data).sort();
 
-    if (dates.length === 0)
-      return {
-        gamesPlayed: 0,
-        gamesWon: 0,
-        winPercentage: 0,
-        currentStreak: 0,
-        maxStreak: 0,
-        averageGuesses: 0,
-      };
+    if (dates.length === 0) return null;
 
     let gamesPlayed = 0;
     let gamesWon = 0;
@@ -176,13 +159,6 @@ export const getUserStats = (): UserStats => {
     };
   } catch (error) {
     console.error("Failed to load user stats:", error);
-    return {
-      gamesPlayed: 0,
-      gamesWon: 0,
-      winPercentage: 0,
-      currentStreak: 0,
-      maxStreak: 0,
-      averageGuesses: 0,
-    };
+    return null;
   }
 };
