@@ -7,6 +7,7 @@ export const dynamic = "force-dynamic";
 export default async function Page() {
   const players = await fetchPlayers();
   const dateString = new Date().toISOString().split("T")[0];
+
   const targetPlayer = getTargetPlayer(players, dateString);
 
   return (

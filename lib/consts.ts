@@ -2,7 +2,7 @@ import { Position } from "./definitions";
 
 // config
 
-export const MAX_ATTEMPTS = 20;
+export const MAX_ATTEMPTS = 10;
 
 // fpl api
 
