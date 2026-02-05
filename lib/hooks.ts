@@ -32,12 +32,13 @@ export function useGameState(targetPlayer: Player): UseGameStateReturn {
   }, [targetPlayer.id]);
 
   React.useEffect(() => {
-    if (isLoaded) {
-      saveGameState(targetPlayer.id, guesses, gameStatus);
-      if (gameStatus === "won" || gameStatus === "lost")
-        setUserStats(getUserStats());
-    }
+    if (isLoaded) saveGameState(targetPlayer.id, guesses, gameStatus);
   }, [guesses, gameStatus, targetPlayer.id, isLoaded]);
+
+  React.useEffect(() => {
+    if (gameStatus === "won" || gameStatus === "lost")
+      setUserStats(getUserStats());
+  }, [gameStatus]);
 
   const submitGuess = React.useCallback(
     (player: Player) => {
