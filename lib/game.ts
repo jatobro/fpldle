@@ -6,6 +6,7 @@ import type {
   Team,
 } from "./definitions";
 import { isPositionAdjacent } from "./utils";
+import { act } from "react";
 
 // Comparison logic
 
@@ -129,10 +130,11 @@ export const getTargetPlayer = (
   players: Player[],
   dateString: string,
 ): Player => {
-  const activePlayers = players.filter((p) => p.selectedBy > 0);
+  if (players.length === 0) throw new Error("No players found");
 
-  if (activePlayers.length === 0)
-    throw new Error("No active players to choose from");
+  let activePlayers = players.filter((p) => p.selectedBy > 0);
+
+  if (activePlayers.length === 0) activePlayers = players;
 
   const seed = cyrb128(dateString);
 
