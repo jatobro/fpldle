@@ -22,7 +22,8 @@ export const saveGameState = (
   if (typeof window === "undefined") return;
 
   try {
-    const existingData = loadAllGames();
+    const storedData = localStorage.getItem(STORAGE_KEY);
+    const existingData: StorageData = storedData ? JSON.parse(storedData) : {};
     const completedAt =
       gameStatus !== "playing" ? new Date().toISOString() : null;
 
@@ -104,9 +105,10 @@ export const getUserStats = (): UserStats | null => {
   if (typeof window === "undefined") return null;
 
   try {
-    const data = loadAllGames();
-    const dates = Object.keys(data).sort();
+    const storedData = localStorage.getItem(STORAGE_KEY);
+    const data: StorageData = storedData ? JSON.parse(storedData) : {};
 
+    const dates = Object.keys(data).sort();
     if (dates.length === 0) return null;
 
     let gamesPlayed = 0;
@@ -119,10 +121,10 @@ export const getUserStats = (): UserStats | null => {
       const game = data[date];
       if (game.gameStatus === "won" || game.gameStatus === "lost") {
         gamesPlayed++;
+        totalGuesses += game.guesses.length;
 
         if (game.gameStatus === "won") {
           gamesWon++;
-          totalGuesses += game.guesses.length;
 
           if (currentStreak >= 0) {
             currentStreak++;

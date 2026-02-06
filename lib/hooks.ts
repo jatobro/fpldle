@@ -59,15 +59,17 @@ export function useGameState(
         attributes,
       };
 
-      setGuesses((prev) => {
-        const newGuesses = [newGuess, ...prev];
-        if (player.id === targetPlayer.id) {
-          setGameStatus("won");
-        } else if (newGuesses.length >= MAX_ATTEMPTS) {
-          setGameStatus("lost");
-        }
-        return newGuesses;
-      });
+      const newGuesses = [newGuess, ...guesses];
+      let newGameStatus: GameStatus = gameStatus;
+
+      if (player.id === targetPlayer.id) {
+        newGameStatus = "won";
+      } else if (newGuesses.length >= MAX_ATTEMPTS) {
+        newGameStatus = "lost";
+      }
+
+      setGuesses(newGuesses);
+      if (newGameStatus !== gameStatus) setGameStatus(newGameStatus);
     },
     [gameStatus, targetPlayer, guesses],
   );

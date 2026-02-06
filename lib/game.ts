@@ -131,6 +131,9 @@ export const getTargetPlayer = (
 ): Player => {
   const activePlayers = players.filter((p) => p.selectedBy > 0);
 
+  if (activePlayers.length === 0)
+    throw new Error("No active players to choose from");
+
   const seed = cyrb128(dateString);
 
   const a = seed;
@@ -145,9 +148,7 @@ export const getTargetPlayer = (
 
   const exactPlayer = activePlayers.find((p) => p.id === randomId);
 
-  if (exactPlayer) {
-    return exactPlayer;
-  }
+  if (exactPlayer) return exactPlayer;
 
   const fallbackPlayer = activePlayers.find((p) => p.id >= randomId);
   return fallbackPlayer || activePlayers[0];
