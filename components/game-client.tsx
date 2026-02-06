@@ -39,10 +39,10 @@ export const GameClient = ({
     );
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-4 md:space-y-6">
       {gameStatus === "playing" && (
-        <div className="space-y-2">
-          <p className="text-sm text-muted-foreground">
+        <div className="space-y-3">
+          <p className="text-sm md:text-base text-muted-foreground font-medium">
             Attempts remaining: {MAX_ATTEMPTS - guesses.length}
           </p>
           <div className="flex justify-center">
@@ -65,25 +65,26 @@ export const GameClient = ({
       )}
 
       {guesses.length > 0 && (
-        <div className="space-y-3">
+        <div className="space-y-3 md:space-y-4">
           {guesses.map((guess, index) => (
             <div
               key={`${guess.player.id}-${index}`}
-              className="border rounded-lg p-4 space-y-2"
+              className="border rounded-xl p-4 md:p-6 space-y-3 animate-in fade-in-0 slide-in-from-bottom-4 duration-200"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="text-lg font-semibold">{guess.player.name}</div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2">
+              <div className="text-lg md:text-xl font-bold">{guess.player.name}</div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3">
                 {guess.attributes.map((attr) => (
                   <div
                     key={attr.key}
                     className={`${getStatusColor(
                       attr.status.correctness,
-                    )} rounded-md p-2 text-center`}
+                    )} rounded-lg p-2 md:p-3 text-center transition-colors duration-200`}
                   >
-                    <div className="text-xs opacity-80">
+                    <div className="text-xs md:text-sm opacity-80 mb-1">
                       {ATTRIBUTE_LABELS[attr.key]}
                     </div>
-                    <div className="font-medium">
+                    <div className="font-semibold text-sm md:text-base">
                       {attr.key === "price"
                         ? `£${guess.player.price.toFixed(1)}m ${getDirectionArrow(attr.status.direction)}`
                         : attr.key === "selectedBy"

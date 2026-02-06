@@ -80,6 +80,13 @@
   --sidebar-accent-foreground: oklch(0.21 0.034 264.665);
   --sidebar-border: oklch(0.928 0.006 264.531);
   --sidebar-ring: oklch(0.707 0.022 261.325);
+  
+  --game-correct: oklch(0.55 0.22 142);
+  --game-correct-foreground: oklch(0.985 0.002 247.839);
+  --game-close: oklch(0.7 0.15 85);
+  --game-close-foreground: oklch(0.13 0.028 261.692);
+  --game-incorrect: oklch(0.7 0.03 264);
+  --game-incorrect-foreground: oklch(0.13 0.028 261.692);
 }
 
 .dark {
@@ -114,6 +121,13 @@
   --sidebar-accent-foreground: oklch(0.985 0.002 247.839);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.551 0.027 264.364);
+  
+  --game-correct: oklch(0.45 0.2 142);
+  --game-correct-foreground: oklch(0.985 0.002 247.839);
+  --game-close: oklch(0.65 0.18 85);
+  --game-close-foreground: oklch(0.13 0.028 261.692);
+  --game-incorrect: oklch(0.55 0.06 264);
+  --game-incorrect-foreground: oklch(0.985 0.002 247.839);
 }
 
 @layer base {

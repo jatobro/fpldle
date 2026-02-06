@@ -12,10 +12,10 @@ export default async function Page() {
 
   return (
     <div className="min-h-screen bg-background p-4 md:p-8">
-      <div className="max-w-4xl space-y-4 mx-auto text-center">
-        <div className="space-y-2">
-          <h1 className="text-4xl font-bold">FPLdle</h1>
-          <p className="text-muted-foreground">
+      <div className="max-w-4xl space-y-6 md:space-y-8 mx-auto text-center">
+        <div className="space-y-2 md:space-y-3">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">FPLdle</h1>
+          <p className="text-base md:text-lg text-muted-foreground">
             Guess the daily Fantasy Premier League player!
           </p>
         </div>

@@ -6,7 +6,6 @@ import type {
   Team,
 } from "./definitions";
 import { isPositionAdjacent } from "./utils";
-import { act } from "react";
 
 // Comparison logic
 

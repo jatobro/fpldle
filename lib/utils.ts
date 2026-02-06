@@ -47,11 +47,11 @@ export const getDirectionArrow = (direction: Direction): string => {
 export const getStatusColor = (correctness: Correctness) => {
   switch (correctness) {
     case "correct":
-      return "bg-green-500 text-white";
+      return "bg-[var(--game-correct)] text-[var(--game-correct-foreground)]";
     case "close":
-      return "bg-yellow-500 text-white";
+      return "bg-[var(--game-close)] text-[var(--game-close-foreground)]";
     case "incorrect":
-      return "bg-gray-300 text-gray-700";
+      return "bg-[var(--game-incorrect)] text-[var(--game-incorrect-foreground)]";
   }
 };
 
