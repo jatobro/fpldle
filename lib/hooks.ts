@@ -21,7 +21,9 @@ export function useGameState(
 ): UseGameStateReturn {
   const [guesses, setGuesses] = React.useState<Guess[]>([]);
   const [gameStatus, setGameStatus] = React.useState<GameStatus>("playing");
-  const [userStats, setUserStats] = React.useState<UserStats | null>(null);
+  const [userStats, setUserStats] = React.useState<UserStats | null>(
+    loadUserStats(),
+  );
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   const targetPlayer = React.useMemo(
@@ -30,13 +32,11 @@ export function useGameState(
   );
 
   React.useEffect(() => {
-    const savedState = loadGameState(dateString);
-    if (savedState) {
-      setGuesses(savedState.guesses);
-      setGameStatus(savedState.gameStatus);
+    const storedState = loadGameState(dateString);
+    if (storedState) {
+      setGuesses(storedState.guesses);
+      setGameStatus(storedState.gameStatus);
     }
-    const stats = loadUserStats();
-    setUserStats(stats);
 
     setIsLoaded(true);
   }, [dateString]);
