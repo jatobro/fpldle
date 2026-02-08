@@ -3,7 +3,7 @@
 import { MAX_ATTEMPTS } from "@/lib/consts";
 import { GameStatus, Guess, Player, UserStats } from "@/lib/definitions";
 import { comparePlayers } from "@/lib/game";
-import { getUserStats, loadGameState, saveGameState } from "@/lib/storage";
+import { loadUserStats, loadGameState, saveGameState } from "@/lib/storage";
 import * as React from "react";
 
 interface UseGameStateReturn {
@@ -11,7 +11,6 @@ interface UseGameStateReturn {
   gameStatus: GameStatus;
   userStats: UserStats | null;
   submitGuess: (player: Player) => void;
-  resetGame: () => void;
   isLoaded: boolean;
 }
 
@@ -25,12 +24,13 @@ export function useGameState(
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   React.useEffect(() => {
-    const savedState = loadGameState(dateString, targetPlayer.id);
+    const savedState = loadGameState(dateString);
+    const stats = loadUserStats();
     if (savedState) {
       setGuesses(savedState.guesses);
       setGameStatus(savedState.gameStatus);
     }
-    setUserStats(getUserStats());
+    setUserStats(stats);
     setIsLoaded(true);
   }, [dateString, targetPlayer.id]);
 
@@ -40,8 +40,10 @@ export function useGameState(
   }, [isLoaded, dateString, targetPlayer.id, guesses, gameStatus]);
 
   React.useEffect(() => {
-    if (gameStatus === "won" || gameStatus === "lost")
-      setUserStats(getUserStats());
+    if (gameStatus === "won" || gameStatus === "lost") {
+      const newStats = loadUserStats();
+      setUserStats(newStats);
+    }
   }, [gameStatus]);
 
   const submitGuess = React.useCallback(
@@ -74,18 +76,11 @@ export function useGameState(
     [gameStatus, targetPlayer, guesses],
   );
 
-  const resetGame = React.useCallback(() => {
-    setGuesses([]);
-    setGameStatus("playing");
-    saveGameState(dateString, targetPlayer.id, [], "playing");
-  }, [dateString, targetPlayer.id]);
-
   return {
     guesses,
     gameStatus,
     userStats,
     submitGuess,
-    resetGame,
     isLoaded,
   };
 }

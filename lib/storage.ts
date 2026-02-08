@@ -40,7 +40,7 @@ export const saveGameState = (
   }
 };
 
-export const loadGameState = (dateString: string, targetPlayerId: number) => {
+export const loadGameState = (dateString: string) => {
   if (typeof window === "undefined") return null;
 
   try {
@@ -51,12 +51,6 @@ export const loadGameState = (dateString: string, targetPlayerId: number) => {
     const gameState = parsedData[dateString];
 
     if (!gameState) return null;
-
-    if (gameState.targetPlayerId !== targetPlayerId) {
-      delete parsedData[dateString];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(parsedData));
-      return null;
-    }
 
     return gameState;
   } catch (error) {
@@ -101,7 +95,7 @@ export const clearOldGames = (daysToKeep: number = 30): void => {
   }
 };
 
-export const getUserStats = (): UserStats | null => {
+export const loadUserStats = (): UserStats | null => {
   if (typeof window === "undefined") return null;
 
   try {
