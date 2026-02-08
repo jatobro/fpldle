@@ -5,7 +5,10 @@ import { transformFPLData } from "./utils";
 export const fetchPlayers = async () => {
   const response = await fetch(FPL_API_URL);
 
-  if (!response.ok) throw new Error(response.statusText);
+  if (!response.ok)
+    throw new Error(
+      `Failed to fetch data from FPL API: ${response.statusText}`,
+    );
 
   const data: FPLApiResponse = await response.json();
 
