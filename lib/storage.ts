@@ -1,7 +1,6 @@
 import { GameStatus, Guess, UserStats } from "./definitions";
 
 interface StoredGameState {
-  targetPlayerId: number;
   guesses: Guess[];
   gameStatus: GameStatus;
   completedAt: string | null;
@@ -15,7 +14,6 @@ const STORAGE_KEY = "fpldle-games";
 
 export const saveGameState = (
   dateString: string,
-  targetPlayerId: number,
   guesses: Guess[],
   gameStatus: GameStatus,
 ): void => {
@@ -28,7 +26,6 @@ export const saveGameState = (
       gameStatus !== "playing" ? new Date().toISOString() : null;
 
     existingData[dateString] = {
-      targetPlayerId,
       guesses,
       gameStatus,
       completedAt,

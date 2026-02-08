@@ -31,19 +31,19 @@ export function useGameState(
 
   React.useEffect(() => {
     const savedState = loadGameState(dateString);
-    const stats = loadUserStats();
     if (savedState) {
       setGuesses(savedState.guesses);
       setGameStatus(savedState.gameStatus);
     }
+    const stats = loadUserStats();
     setUserStats(stats);
+
     setIsLoaded(true);
-  }, [dateString, targetPlayer.id]);
+  }, [dateString]);
 
   React.useEffect(() => {
-    if (isLoaded)
-      saveGameState(dateString, targetPlayer.id, guesses, gameStatus);
-  }, [isLoaded, dateString, targetPlayer.id, guesses, gameStatus]);
+    if (isLoaded) saveGameState(dateString, guesses, gameStatus);
+  }, [isLoaded, dateString, guesses, gameStatus]);
 
   React.useEffect(() => {
     if (gameStatus === "won" || gameStatus === "lost") {
