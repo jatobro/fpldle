@@ -5,13 +5,13 @@ import { PlayerSearch } from "@/components/player-search";
 import { Spinner } from "@/components/ui/spinner";
 import { MAX_ATTEMPTS } from "@/lib/consts";
 import { Player, AttributeKey } from "@/lib/definitions";
+import { getTargetPlayer } from "@/lib/game";
 import { useGameState } from "@/lib/hooks";
 import { getStatusColor, getDirectionArrow } from "@/lib/utils";
 
 interface GameClientProps {
   players: Player[];
   dateString: string;
-  targetPlayer: Player;
 }
 
 const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
@@ -23,13 +23,11 @@ const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
   selectedBy: "Selected By",
 };
 
-export const GameClient = ({
-  players,
-  dateString,
-  targetPlayer,
-}: GameClientProps) => {
+export const GameClient = ({ players, dateString }: GameClientProps) => {
   const { guesses, gameStatus, userStats, submitGuess, isLoaded } =
-    useGameState(dateString, targetPlayer);
+    useGameState(players, dateString);
+
+  const targetPlayer = getTargetPlayer(players, dateString);
 
   if (!isLoaded)
     return (
@@ -42,7 +40,7 @@ export const GameClient = ({
     <div className="space-y-4 md:space-y-6">
       {gameStatus === "playing" && (
         <div className="space-y-3">
-          <p className="text-sm md:text-base text-muted-foreground font-medium">
+          <p className="text-muted-foreground text-sm font-medium md:text-base">
             Attempts remaining: {MAX_ATTEMPTS - guesses.length}
           </p>
           <div className="flex justify-center">
@@ -69,22 +67,24 @@ export const GameClient = ({
           {guesses.map((guess, index) => (
             <div
               key={`${guess.player.id}-${index}`}
-              className="border rounded-xl p-4 md:p-6 space-y-3 animate-in fade-in-0 slide-in-from-bottom-4 duration-200"
+              className="animate-in fade-in-0 slide-in-from-bottom-4 space-y-3 rounded-xl border p-4 duration-200 md:p-6"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="text-lg md:text-xl font-bold">{guess.player.name}</div>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-3">
+              <div className="text-lg font-bold md:text-xl">
+                {guess.player.name}
+              </div>
+              <div className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-3 lg:grid-cols-6">
                 {guess.attributes.map((attr) => (
                   <div
                     key={attr.key}
                     className={`${getStatusColor(
                       attr.status.correctness,
-                    )} rounded-lg p-2 md:p-3 text-center transition-colors duration-200`}
+                    )} rounded-lg p-2 text-center transition-colors duration-200 md:p-3`}
                   >
-                    <div className="text-xs md:text-sm opacity-80 mb-1">
+                    <div className="mb-1 text-xs opacity-80 md:text-sm">
                       {ATTRIBUTE_LABELS[attr.key]}
                     </div>
-                    <div className="font-semibold text-sm md:text-base">
+                    <div className="text-sm font-semibold md:text-base">
                       {attr.key === "price"
                         ? `£${guess.player.price.toFixed(1)}m ${getDirectionArrow(attr.status.direction)}`
                         : attr.key === "selectedBy"

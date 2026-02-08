@@ -2,7 +2,7 @@
 
 import { MAX_ATTEMPTS } from "@/lib/consts";
 import { GameStatus, Guess, Player, UserStats } from "@/lib/definitions";
-import { comparePlayers } from "@/lib/game";
+import { comparePlayers, getTargetPlayer } from "@/lib/game";
 import { loadUserStats, loadGameState, saveGameState } from "@/lib/storage";
 import * as React from "react";
 
@@ -15,13 +15,18 @@ interface UseGameStateReturn {
 }
 
 export function useGameState(
+  players: Player[],
   dateString: string,
-  targetPlayer: Player,
 ): UseGameStateReturn {
   const [guesses, setGuesses] = React.useState<Guess[]>([]);
   const [gameStatus, setGameStatus] = React.useState<GameStatus>("playing");
   const [userStats, setUserStats] = React.useState<UserStats | null>(null);
   const [isLoaded, setIsLoaded] = React.useState(false);
+
+  const targetPlayer = React.useMemo(
+    () => getTargetPlayer(players, dateString),
+    [players, dateString],
+  );
 
   React.useEffect(() => {
     const savedState = loadGameState(dateString);
