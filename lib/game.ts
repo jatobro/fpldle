@@ -5,7 +5,6 @@ import type {
   Position,
   Team,
 } from "./definitions";
-import { isPositionAdjacent } from "./utils";
 
 // Comparison logic
 
@@ -14,15 +13,13 @@ const comparePosition = (
   target: Position,
 ): AttributeStatus => {
   if (guess === target) return { correctness: "correct", direction: null };
-  if (isPositionAdjacent(guess, target))
-    return { correctness: "close", direction: null };
   return { correctness: "incorrect", direction: null };
 };
 
-const compareTeam = (guess: Team, target: Team): AttributeStatus =>
-  guess === target
-    ? { correctness: "correct", direction: null }
-    : { correctness: "incorrect", direction: null };
+const compareTeam = (guess: Team, target: Team): AttributeStatus => {
+  if (guess === target) return { correctness: "correct", direction: null };
+  return { correctness: "incorrect", direction: null };
+};
 
 const comparePrice = (guess: number, target: number): AttributeStatus => {
   if (guess === target) return { correctness: "correct", direction: null };
@@ -50,7 +47,7 @@ const comparePoints = (guess: number, target: number): AttributeStatus => {
 
 const compareSelectedBy = (guess: number, target: number): AttributeStatus => {
   if (guess === target) return { correctness: "correct", direction: null };
-  const isClose = Math.abs(guess - target) <= 5;
+  const isClose = Math.abs(guess - target) <= 1;
   const correctness = isClose ? "close" : "incorrect";
   const direction = guess < target ? "up" : "down";
   return { correctness, direction };
