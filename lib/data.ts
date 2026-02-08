@@ -3,7 +3,7 @@ import { FPLApiResponse } from "./definitions";
 import { transformFPLData } from "./utils";
 
 export const fetchPlayers = async () => {
-  const response = await fetch(FPL_API_URL, { next: { revalidate: 3600 } });
+  const response = await fetch(FPL_API_URL);
 
   if (!response.ok) throw new Error(response.statusText);
 
