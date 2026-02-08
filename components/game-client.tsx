@@ -5,7 +5,6 @@ import { PlayerSearch } from "@/components/player-search";
 import { Spinner } from "@/components/ui/spinner";
 import { MAX_ATTEMPTS } from "@/lib/consts";
 import { Player, AttributeKey } from "@/lib/definitions";
-import { getTargetPlayer } from "@/lib/game";
 import { useGameState } from "@/lib/hooks";
 import { getStatusColor, getDirectionArrow } from "@/lib/utils";
 
@@ -24,10 +23,14 @@ const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
 };
 
 export const GameClient = ({ players, dateString }: GameClientProps) => {
-  const { guesses, gameStatus, userStats, submitGuess, isLoaded } =
-    useGameState(players, dateString);
-
-  const targetPlayer = getTargetPlayer(players, dateString);
+  const {
+    targetPlayer,
+    guesses,
+    gameStatus,
+    userStats,
+    isLoaded,
+    submitGuess,
+  } = useGameState(players, dateString);
 
   if (!isLoaded)
     return (

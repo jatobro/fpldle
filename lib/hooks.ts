@@ -7,11 +7,12 @@ import { loadUserStats, loadGameState, saveGameState } from "@/lib/storage";
 import * as React from "react";
 
 interface UseGameStateReturn {
+  targetPlayer: Player;
   guesses: Guess[];
   gameStatus: GameStatus;
   userStats: UserStats | null;
-  submitGuess: (player: Player) => void;
   isLoaded: boolean;
+  submitGuess: (player: Player) => void;
 }
 
 export function useGameState(
@@ -82,10 +83,11 @@ export function useGameState(
   );
 
   return {
+    targetPlayer,
     guesses,
     gameStatus,
     userStats,
-    submitGuess,
     isLoaded,
+    submitGuess,
   };
 }
