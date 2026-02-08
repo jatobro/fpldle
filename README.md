@@ -18,7 +18,7 @@ A daily Wordle-inspired guessing game for Fantasy Premier League (FPL) enthusias
 
 ## 📸 Preview
 
-<!-- Add a screenshot or GIF of the game here -->
+<img width="2126" height="3360" alt="fpldle-preview" src="https://github.com/user-attachments/assets/0f31bfab-0e25-483c-9cf1-d0d1d1497dc2" />
 
 ## 🎮 How to Play
 
