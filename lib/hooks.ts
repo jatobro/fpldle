@@ -11,7 +11,7 @@ interface UseGameStateReturn {
   guesses: Guess[];
   gameStatus: GameStatus;
   userStats: UserStats | null;
-  isLoaded: boolean;
+  isLoading: boolean;
   submitGuess: (player: Player) => void;
 }
 
@@ -24,7 +24,7 @@ export function useGameState(
   const [userStats, setUserStats] = React.useState<UserStats | null>(
     loadUserStats(),
   );
-  const [isLoaded, setIsLoaded] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
   const hasLoadedRef = React.useRef(false);
   const prevGameStatusRef = React.useRef(gameStatus);
 
@@ -42,7 +42,7 @@ export function useGameState(
         setUserStats(loadUserStats());
     }
 
-    setIsLoaded(true);
+    setIsLoading(false);
   }, [dateString]);
 
   React.useEffect(() => {
@@ -95,7 +95,7 @@ export function useGameState(
     guesses,
     gameStatus,
     userStats,
-    isLoaded,
+    isLoading,
     submitGuess,
   };
 }

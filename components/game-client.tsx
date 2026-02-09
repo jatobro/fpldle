@@ -28,11 +28,11 @@ export const GameClient = ({ players, dateString }: GameClientProps) => {
     guesses,
     gameStatus,
     userStats,
-    isLoaded,
+    isLoading,
     submitGuess,
   } = useGameState(players, dateString);
 
-  if (!isLoaded)
+  if (isLoading)
     return (
       <div className="flex justify-center">
         <Spinner />
