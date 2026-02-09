@@ -34,12 +34,12 @@ A daily Wordle-inspired guessing game for Fantasy Premier League (FPL) enthusias
 
 | Attribute | Close Range |
 |-----------|-------------|
-| Position | Adjacent position (e.g., DEF ↔ MID) |
+| Position | Exact match only |
 | Team | Exact match only |
 | Price | Within £0.5m |
 | Form | Within 1.0 |
 | Points | Within 10 points |
-| Selected By | Within 5% |
+| Selected By | Within 1% |
 
 ## ✨ Features
 
