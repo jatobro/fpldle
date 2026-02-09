@@ -51,9 +51,12 @@ export function useGameState(
   }, [dateString, guesses, gameStatus]);
 
   React.useEffect(() => {
-    if (prevGameStatusRef.current === "playing" && (gameStatus === "won" || gameStatus === "lost")) {
+    if (
+      prevGameStatusRef.current === "playing" &&
+      (gameStatus === "won" || gameStatus === "lost")
+    )
       setUserStats(loadUserStats());
-    }
+
     prevGameStatusRef.current = gameStatus;
   }, [gameStatus]);
 
