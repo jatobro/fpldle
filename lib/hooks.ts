@@ -26,6 +26,7 @@ export function useGameState(
   );
   const [isLoaded, setIsLoaded] = React.useState(false);
   const hasLoadedRef = React.useRef(false);
+  const prevGameStatusRef = React.useRef(gameStatus);
 
   const targetPlayer = React.useMemo(
     () => getTargetPlayer(players, dateString),
@@ -48,6 +49,13 @@ export function useGameState(
     if (hasLoadedRef.current) saveGameState(dateString, guesses, gameStatus);
     hasLoadedRef.current = true;
   }, [dateString, guesses, gameStatus]);
+
+  React.useEffect(() => {
+    if (prevGameStatusRef.current === "playing" && (gameStatus === "won" || gameStatus === "lost")) {
+      setUserStats(loadUserStats());
+    }
+    prevGameStatusRef.current = gameStatus;
+  }, [gameStatus]);
 
   const submitGuess = React.useCallback(
     (player: Player) => {
@@ -74,10 +82,7 @@ export function useGameState(
       }
 
       setGuesses(newGuesses);
-      if (newGameStatus !== gameStatus) {
-        setGameStatus(newGameStatus);
-        setUserStats(loadUserStats());
-      }
+      if (newGameStatus !== gameStatus) setGameStatus(newGameStatus);
     },
     [gameStatus, targetPlayer, guesses],
   );
