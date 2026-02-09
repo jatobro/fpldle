@@ -6,7 +6,7 @@ export default async function Page() {
   await connection();
 
   const players = await fetchPlayers();
-  const dateString = new Date().toISOString().split("T")[0];
+  const dateString = new Date().toISOString().slice(0, 10);
 
   return (
     <div className="bg-background min-h-screen p-4 md:p-8">

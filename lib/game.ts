@@ -141,13 +141,6 @@ export const getTargetPlayer = (
 
   const random = sfc32(a, b, c, d);
 
-  const maxId = Math.max(...activePlayers.map((p) => p.id));
-  const randomId = Math.floor(random() * maxId);
-
-  const exactPlayer = activePlayers.find((p) => p.id === randomId);
-
-  if (exactPlayer) return exactPlayer;
-
-  const fallbackPlayer = activePlayers.find((p) => p.id >= randomId);
-  return fallbackPlayer || activePlayers[0];
+  const index = Math.floor(random() * activePlayers.length);
+  return activePlayers[index];
 };
