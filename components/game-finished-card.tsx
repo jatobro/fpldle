@@ -35,26 +35,33 @@ export const GameFinishedCard = ({
 
   const [shareFeedback, setShareFeedback] = React.useState(false);
 
-  const handleShare = () => {
+  const handleShare = async () => {
     const shareText = generateShareText(status, guesses);
-    navigator.clipboard.writeText(shareText);
-    setShareFeedback(true);
-    setTimeout(() => setShareFeedback(false), 2000);
+    try {
+      await navigator.clipboard.writeText(shareText);
+      setShareFeedback(true);
+      setTimeout(() => setShareFeedback(false), 2000);
+    } catch (error) {
+      console.error(error);
+      alert("Failed to copy to clipboard");
+    }
   };
 
   return (
-    <div className={`text-center p-6 md:p-8 ${bgColor} ${textColor} rounded-xl shadow-lg`}>
-      <h2 className="text-3xl md:text-4xl font-bold mb-3">{heading}</h2>
+    <div
+      className={`p-6 text-center md:p-8 ${bgColor} ${textColor} rounded-xl shadow-lg`}
+    >
+      <h2 className="mb-3 text-3xl font-bold md:text-4xl">{heading}</h2>
       <p className="text-lg md:text-xl">The player was {targetPlayer.name}</p>
       {status === "won" && (
-        <p className="text-base md:text-lg mt-2 font-medium">
+        <p className="mt-2 text-base font-medium md:text-lg">
           {guesses.length} / {MAX_ATTEMPTS} attempts
         </p>
       )}
       {userStats && <StatsDisplay userStats={userStats} />}
       <Button
         onClick={handleShare}
-        className={`mt-4 bg-background text-foreground font-semibold py-2 md:py-3 px-6 md:px-8 rounded-lg hover:opacity-90 transition-opacity`}
+        className={`bg-background text-foreground mt-4 rounded-lg px-6 py-2 font-semibold transition-opacity hover:opacity-90 md:px-8 md:py-3`}
       >
         {shareFeedback ? "Copied!" : "Share FPLdle"}
       </Button>

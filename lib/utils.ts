@@ -58,7 +58,7 @@ export const getStatusColor = (correctness: Correctness) => {
 // share text
 
 const getGameNumber = () => {
-  const launchDate = new Date("2025-01-01");
+  const launchDate = new Date(); //TODO: set this to launch date
   const today = new Date();
   const diffTime = today.getTime() - launchDate.getTime();
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
@@ -72,8 +72,6 @@ const correctnessEmoji = (correctness: Correctness) => {
     case "close":
       return "🟨";
     case "incorrect":
-      return "⬜";
-    default:
       return "⬜";
   }
 };
@@ -96,7 +94,8 @@ export const generateShareText = (gameStatus: GameStatus, guesses: Guess[]) => {
     result += "\n";
   });
 
-  result += `\n${process.env.NEXT_PUBLIC_APP_URL}`;
+  if (process.env.NEXT_PUBLIC_APP_URL)
+    result += `\n${process.env.NEXT_PUBLIC_APP_URL}`;
 
   return result;
 };
