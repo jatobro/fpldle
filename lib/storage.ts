@@ -12,11 +12,11 @@ interface StorageData {
 
 const STORAGE_KEY = "fpldle-games";
 
-export const saveGameState = (
+export function saveGameState(
   dateString: string,
   guesses: Guess[],
   gameStatus: GameStatus,
-): void => {
+): void {
   if (typeof window === "undefined") return;
 
   try {
@@ -35,9 +35,9 @@ export const saveGameState = (
   } catch (error) {
     console.error("Failed to save game state:", error);
   }
-};
+}
 
-export const loadGameState = (dateString: string) => {
+export function loadGameState(dateString: string) {
   if (typeof window === "undefined") return null;
 
   try {
@@ -54,9 +54,9 @@ export const loadGameState = (dateString: string) => {
     console.error("Failed to load game state:", error);
     return null;
   }
-};
+}
 
-export const loadAllGames = (): StorageData => {
+export function loadAllGames(): StorageData {
   if (typeof window === "undefined") return {};
 
   try {
@@ -68,9 +68,9 @@ export const loadAllGames = (): StorageData => {
     console.error("Failed to load all games:", error);
     return {};
   }
-};
+}
 
-export const clearOldGames = (daysToKeep: number = 30): void => {
+export function clearOldGames(daysToKeep: number = 30): void {
   if (typeof window === "undefined") return;
 
   try {
@@ -90,9 +90,9 @@ export const clearOldGames = (daysToKeep: number = 30): void => {
   } catch (error) {
     console.error("Failed to clear old games:", error);
   }
-};
+}
 
-export const loadUserStats = (): UserStats | null => {
+export function loadUserStats(): UserStats | null {
   if (typeof window === "undefined") return null;
 
   try {
@@ -149,4 +149,4 @@ export const loadUserStats = (): UserStats | null => {
     console.error("Failed to load user stats:", error);
     return null;
   }
-};
+}

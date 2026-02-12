@@ -1,8 +1,10 @@
 import { StatsDisplay } from "./stats-display";
 import { Button } from "./ui/button";
 import { MAX_ATTEMPTS } from "@/lib/consts";
+import { FPL_PLAYER_IMG_BASE_URL } from "@/lib/consts";
 import { Player, Guess, UserStats } from "@/lib/definitions";
 import { generateShareText } from "@/lib/utils";
+import Image from "next/image";
 import React from "react";
 
 interface GameFinishedCardProps {
@@ -25,17 +27,17 @@ const config = {
   },
 } as const;
 
-export const GameFinishedCard = ({
+export function GameFinishedCard({
   status,
   targetPlayer,
   guesses,
   userStats,
-}: GameFinishedCardProps) => {
+}: GameFinishedCardProps) {
   const { bgColor, textColor, heading } = config[status];
 
   const [shareFeedback, setShareFeedback] = React.useState(false);
 
-  const handleShare = async () => {
+  async function handleShare() {
     const shareText = generateShareText(status, guesses);
     try {
       await navigator.clipboard.writeText(shareText);
@@ -45,7 +47,7 @@ export const GameFinishedCard = ({
       console.error(error);
       alert("Failed to copy to clipboard");
     }
-  };
+  }
 
   return (
     <div
@@ -53,6 +55,14 @@ export const GameFinishedCard = ({
     >
       <h2 className="mb-3 text-3xl font-bold md:text-4xl">{heading}</h2>
       <p className="text-lg md:text-xl">The player was {targetPlayer.name}</p>
+      <div className="flex justify-center">
+        <Image
+          width={110}
+          height={140}
+          src={`${FPL_PLAYER_IMG_BASE_URL}${targetPlayer.photo}`}
+          alt={targetPlayer.name}
+        />
+      </div>
       {status === "won" && (
         <p className="mt-2 text-base font-medium md:text-lg">
           {guesses.length} / {MAX_ATTEMPTS} attempts
@@ -67,4 +77,4 @@ export const GameFinishedCard = ({
       </Button>
     </div>
   );
-};
+}

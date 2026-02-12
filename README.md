@@ -32,14 +32,14 @@ A daily Wordle-inspired guessing game for Fantasy Premier League (FPL) enthusias
 
 ### Attributes
 
-| Attribute | Close Range |
-|-----------|-------------|
-| Position | Exact match only |
-| Team | Exact match only |
-| Price | Within £0.5m |
-| Form | Within 1.0 |
-| Points | Within 10 points |
-| Selected By | Within 1% |
+| Attribute   | Close Range      |
+| ----------- | ---------------- |
+| Position    | Exact match only |
+| Team        | Exact match only |
+| Price       | Within £0.5m     |
+| Form        | Within 1.0       |
+| Points      | Within 10 points |
+| Selected By | Within 1%        |
 
 ## ✨ Features
 
@@ -59,7 +59,7 @@ A daily Wordle-inspired guessing game for Fantasy Premier League (FPL) enthusias
 
 ### Prerequisites
 
-- Node.js 20+ 
+- Node.js 20+
 - pnpm (recommended), npm, or yarn
 
 ### Installation
@@ -150,6 +150,7 @@ fpldle/
 ## 📊 Data Sources
 
 Player data is fetched from the official [Fantasy Premier League API](https://fantasy.premierleague.com/api/bootstrap-static/):
+
 - Player names & IDs
 - Positions (GK, DEF, MID, FWD)
 - Teams

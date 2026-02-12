@@ -8,82 +8,81 @@ import type {
 
 // Comparison logic
 
-const comparePosition = (
-  guess: Position,
-  target: Position,
-): AttributeStatus => {
+function comparePosition(guess: Position, target: Position): AttributeStatus {
   if (guess === target) return { correctness: "correct", direction: null };
   return { correctness: "incorrect", direction: null };
-};
+}
 
-const compareTeam = (guess: Team, target: Team): AttributeStatus => {
+function compareTeam(guess: Team, target: Team): AttributeStatus {
   if (guess === target) return { correctness: "correct", direction: null };
   return { correctness: "incorrect", direction: null };
-};
+}
 
-const comparePrice = (guess: number, target: number): AttributeStatus => {
+function comparePrice(guess: number, target: number): AttributeStatus {
   if (guess === target) return { correctness: "correct", direction: null };
   const isClose = Math.abs(guess - target) <= 0.5;
   const correctness = isClose ? "close" : "incorrect";
   const direction = guess < target ? "up" : "down";
   return { correctness, direction };
-};
+}
 
-const compareForm = (guess: number, target: number): AttributeStatus => {
+function compareForm(guess: number, target: number): AttributeStatus {
   if (guess === target) return { correctness: "correct", direction: null };
   const isClose = Math.abs(guess - target) <= 1.0;
   const correctness = isClose ? "close" : "incorrect";
   const direction = guess < target ? "up" : "down";
   return { correctness, direction };
-};
+}
 
-const comparePoints = (guess: number, target: number): AttributeStatus => {
+function comparePoints(guess: number, target: number): AttributeStatus {
   if (guess === target) return { correctness: "correct", direction: null };
   const isClose = Math.abs(guess - target) <= 10;
   const correctness = isClose ? "close" : "incorrect";
   const direction = guess < target ? "up" : "down";
   return { correctness, direction };
-};
+}
 
-const compareSelectedBy = (guess: number, target: number): AttributeStatus => {
+function compareSelectedBy(guess: number, target: number): AttributeStatus {
   if (guess === target) return { correctness: "correct", direction: null };
   const isClose = Math.abs(guess - target) <= 1;
   const correctness = isClose ? "close" : "incorrect";
   const direction = guess < target ? "up" : "down";
   return { correctness, direction };
-};
+}
 
 // Main comparison function
-export const comparePlayers = (guess: Player, target: Player): Attribute[] => [
-  {
-    key: "position",
-    status: comparePosition(guess.position, target.position),
-  },
-  {
-    key: "team",
-    status: compareTeam(guess.team, target.team),
-  },
-  {
-    key: "price",
-    status: comparePrice(guess.price, target.price),
-  },
-  {
-    key: "form",
-    status: compareForm(guess.form, target.form),
-  },
-  {
-    key: "points",
-    status: comparePoints(guess.points, target.points),
-  },
-  {
-    key: "selectedBy",
-    status: compareSelectedBy(guess.selectedBy, target.selectedBy),
-  },
-];
+export function comparePlayers(guess: Player, target: Player): Attribute[] {
+  return [
+    {
+      key: "position",
+      status: comparePosition(guess.position, target.position),
+    },
+    {
+      key: "team",
+      status: compareTeam(guess.team, target.team),
+    },
+    {
+      key: "price",
+      status: comparePrice(guess.price, target.price),
+    },
+    {
+      key: "form",
+      status: compareForm(guess.form, target.form),
+    },
+    {
+      key: "points",
+      status: comparePoints(guess.points, target.points),
+    },
+    {
+      key: "selectedBy",
+      status: compareSelectedBy(guess.selectedBy, target.selectedBy),
+    },
+  ];
+}
 
 // Daily player selection
 
-const cyrb128 = (str: string) => {
+function cyrb128(str: string) {
   let h1 = 1779033703;
   let h2 = 3144134277;
   let h3 = 1013904242;
@@ -103,9 +102,9 @@ const cyrb128 = (str: string) => {
   h4 = Math.imul(h2 ^ (h4 >>> 19), 2716044179);
 
   return (h1 ^ h2 ^ h3 ^ h4) >>> 0;
-};
+}
 
-const sfc32 = (a: number, b: number, c: number, d: number) => {
+function sfc32(a: number, b: number, c: number, d: number) {
   return () => {
     a >>>= 0;
     b >>>= 0;
@@ -120,12 +119,9 @@ const sfc32 = (a: number, b: number, c: number, d: number) => {
     c = (c + t) | 0;
     return (t >>> 0) / 4294967296;
   };
-};
+}
 
-export const getTargetPlayer = (
-  players: Player[],
-  dateString: string,
-): Player => {
+export function getTargetPlayer(players: Player[], dateString: string): Player {
   if (players.length === 0) throw new Error("No players found");
 
   let activePlayers = players.filter((p) => p.selectedBy > 0);
@@ -143,4 +139,4 @@ export const getTargetPlayer = (
 
   const index = Math.floor(random() * activePlayers.length);
   return activePlayers[index];
-};
+}

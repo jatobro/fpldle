@@ -12,9 +12,11 @@ import {
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
-export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
-export const transformFPLData = (data: FPLApiResponse): Player[] => {
+export function transformFPLData(data: FPLApiResponse): Player[] {
   const { teams, elements } = data;
 
   const teamMap = new Map<number, Team>(
@@ -30,21 +32,23 @@ export const transformFPLData = (data: FPLApiResponse): Player[] => {
     form: parseFloat(player.form) || 0,
     points: player.total_points,
     selectedBy: parseFloat(player.selected_by_percent) || 0,
+    photo: `p${player.photo.replace(".jpg", ".png")}`,
   }));
-};
+}
 
 // ui helpers
 
-export const isPositionAdjacent = (guess: Position, target: Position) =>
-  Math.abs(POSITION_ORDER[guess] - POSITION_ORDER[target]) === 1;
+export function isPositionAdjacent(guess: Position, target: Position) {
+  return Math.abs(POSITION_ORDER[guess] - POSITION_ORDER[target]) === 1;
+}
 
-export const getDirectionArrow = (direction: Direction): string => {
+export function getDirectionArrow(direction: Direction): string {
   if (direction === "up") return "↑";
   if (direction === "down") return "↓";
   return "";
-};
+}
 
-export const getStatusColor = (correctness: Correctness) => {
+export function getStatusColor(correctness: Correctness) {
   switch (correctness) {
     case "correct":
       return "bg-[var(--game-correct)] text-[var(--game-correct-foreground)]";
@@ -53,19 +57,30 @@ export const getStatusColor = (correctness: Correctness) => {
     case "incorrect":
       return "bg-[var(--game-incorrect)] text-[var(--game-incorrect-foreground)]";
   }
-};
+}
+
+// player image
+
+export function getInitials(name: string) {
+  return name
+    .split(" ")
+    .map((name) => name[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+}
 
 // share text
 
-const getGameNumber = () => {
+function getGameNumber() {
   const launchDate = new Date(); //TODO: set this to launch date
   const today = new Date();
   const diffTime = today.getTime() - launchDate.getTime();
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
   return diffDays + 1;
-};
+}
 
-const correctnessEmoji = (correctness: Correctness) => {
+function correctnessEmoji(correctness: Correctness) {
   switch (correctness) {
     case "correct":
       return "🟩";
@@ -74,9 +89,9 @@ const correctnessEmoji = (correctness: Correctness) => {
     case "incorrect":
       return "⬜";
   }
-};
+}
 
-export const generateShareText = (gameStatus: GameStatus, guesses: Guess[]) => {
+export function generateShareText(gameStatus: GameStatus, guesses: Guess[]) {
   let result = `FPLdle #${getGameNumber()} `;
 
   if (gameStatus === "won") {
@@ -98,4 +113,4 @@ export const generateShareText = (gameStatus: GameStatus, guesses: Guess[]) => {
     result += `\n${process.env.NEXT_PUBLIC_APP_URL}`;
 
   return result;
-};
+}

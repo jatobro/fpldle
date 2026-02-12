@@ -2,7 +2,7 @@ import { FPL_API_URL } from "./consts";
 import { FPLApiResponse } from "./definitions";
 import { transformFPLData } from "./utils";
 
-export const fetchPlayers = async () => {
+export async function fetchPlayers() {
   const response = await fetch(FPL_API_URL);
 
   if (!response.ok)
@@ -15,4 +15,4 @@ export const fetchPlayers = async () => {
   if (!data) throw new Error("FPL API data not found");
 
   return transformFPLData(data);
-};
+}

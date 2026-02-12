@@ -9,6 +9,9 @@ export const MAX_ATTEMPTS = 10;
 export const FPL_API_URL =
   "https://fantasy.premierleague.com/api/bootstrap-static/";
 
+export const FPL_PLAYER_IMG_BASE_URL =
+  "https://resources.premierleague.com/premierleague/photos/players/110x140/";
+
 export const TEAMS = [
   "Arsenal",
   "Aston Villa",

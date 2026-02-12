@@ -22,7 +22,7 @@ const ATTRIBUTE_LABELS: Record<AttributeKey, string> = {
   selectedBy: "Selected By",
 };
 
-export const GameClient = ({ players, dateString }: GameClientProps) => {
+export function GameClient({ players, dateString }: GameClientProps) {
   const {
     targetPlayer,
     guesses,
@@ -103,4 +103,4 @@ export const GameClient = ({ players, dateString }: GameClientProps) => {
       )}
     </div>
   );
-};
+}

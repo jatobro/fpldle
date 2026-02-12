@@ -15,6 +15,7 @@ export interface Player {
   form: number;
   points: number;
   selectedBy: number;
+  photo: string;
 }
 
 // attributes
@@ -77,6 +78,7 @@ export interface FPLPlayer {
   form: string;
   total_points: number;
   selected_by_percent: string;
+  photo: string;
 }
 
 export interface FPLApiResponse {

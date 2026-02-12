@@ -18,11 +18,11 @@ interface PlayerSearchProps {
   onPlayerSelect: (player: Player) => void;
 }
 
-export const PlayerSearch = ({
+export function PlayerSearch({
   players,
   guesses,
   onPlayerSelect,
-}: PlayerSearchProps) => {
+}: PlayerSearchProps) {
   const [query, setQuery] = React.useState("");
   const [open, setOpen] = React.useState(false);
 
@@ -85,7 +85,7 @@ export const PlayerSearch = ({
                   value={player.name}
                   onClick={() => handleSelect(player)}
                 >
-                  <span className="flex items-center justify-between w-full gap-2">
+                  <span className="flex w-full items-center justify-between gap-2">
                     <span>{player.name}</span>
                     <span className="text-muted-foreground text-xs">
                       {player.team}
@@ -99,4 +99,4 @@ export const PlayerSearch = ({
       )}
     </Combobox>
   );
-};
+}
