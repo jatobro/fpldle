@@ -57,8 +57,8 @@ export function GameFinishedCard({
       <p className="text-lg md:text-xl">The player was {targetPlayer.name}</p>
       <div className="flex justify-center">
         <Image
-          width={110}
-          height={140}
+          width={250}
+          height={250}
           src={`${FPL_PLAYER_IMG_BASE_URL}${targetPlayer.photo}`}
           alt={targetPlayer.name}
         />

@@ -10,7 +10,7 @@ export const FPL_API_URL =
   "https://fantasy.premierleague.com/api/bootstrap-static/";
 
 export const FPL_PLAYER_IMG_BASE_URL =
-  "https://resources.premierleague.com/premierleague/photos/players/110x140/";
+  "https://resources.premierleague.com/premierleague/photos/players/250x250/";
 
 export const TEAMS = [
   "Arsenal",
