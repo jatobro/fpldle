@@ -1,6 +1,6 @@
-import { CustomSpinner } from "./custom-spinner";
 import { StatsDisplay } from "./stats-display";
 import { Button } from "./ui/button";
+import { Spinner } from "./ui/spinner";
 import { MAX_ATTEMPTS } from "@/lib/consts";
 import { FPL_PLAYER_IMG_BASE_URL } from "@/lib/consts";
 import { Player, Guess, UserStats } from "@/lib/definitions";
@@ -57,8 +57,8 @@ export function GameFinishedCard({
     >
       <h2 className="mb-3 text-3xl font-bold md:text-4xl">{heading}</h2>
       <p className="text-lg md:text-xl">The player was {targetPlayer.name}</p>
-      <div className="flex justify-center">
-        {!imageIsLoaded && <CustomSpinner />}
+      <div className="flex flex-col items-center justify-center">
+        {!imageIsLoaded && <Spinner className="size-12" />}
         <Image
           width={250}
           height={250}

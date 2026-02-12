@@ -1,6 +1,6 @@
 "use client";
 
-import { CustomSpinner } from "./custom-spinner";
+import { Spinner } from "./ui/spinner";
 import { GameFinishedCard } from "@/components/game-finished-card";
 import { PlayerSearch } from "@/components/player-search";
 import { MAX_ATTEMPTS } from "@/lib/consts";
@@ -35,7 +35,7 @@ export function GameClient({ players, dateString }: GameClientProps) {
   if (isLoading)
     return (
       <div className="flex justify-center">
-        <CustomSpinner />
+        <Spinner className="size-12" />
       </div>
     );
 
