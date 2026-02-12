@@ -61,6 +61,12 @@ export function GameFinishedCard({
           height={250}
           src={`${FPL_PLAYER_IMG_BASE_URL}${targetPlayer.photo}`}
           alt={targetPlayer.name}
+          onError={(e) => {
+            e.currentTarget.style.display = "none";
+            const fallback = e.currentTarget
+              .nextElementSibling as HTMLElement | null;
+            if (fallback) fallback.style.display = "flex";
+          }}
         />
       </div>
       {status === "won" && (
