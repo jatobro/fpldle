@@ -73,7 +73,7 @@ export function getInitials(name: string) {
 // share text
 
 function getGameNumber() {
-  const launchDate = new Date(); //TODO: set this to launch date
+  const launchDate = new Date(2026, 2, 13);
   const today = new Date();
   const diffTime = today.getTime() - launchDate.getTime();
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));

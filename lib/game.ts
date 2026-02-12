@@ -124,7 +124,7 @@ function sfc32(a: number, b: number, c: number, d: number) {
 export function getTargetPlayer(players: Player[], dateString: string): Player {
   if (players.length === 0) throw new Error("No players found");
 
-  let activePlayers = players.filter((p) => p.selectedBy > 0);
+  let activePlayers = players.filter((p) => p.selectedBy >= 1);
 
   if (activePlayers.length === 0) activePlayers = players;
 
