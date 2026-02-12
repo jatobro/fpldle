@@ -1,3 +1,4 @@
+import { CustomSpinner } from "./custom-spinner";
 import { StatsDisplay } from "./stats-display";
 import { Button } from "./ui/button";
 import { MAX_ATTEMPTS } from "@/lib/consts";
@@ -36,6 +37,7 @@ export function GameFinishedCard({
   const { bgColor, textColor, heading } = config[status];
 
   const [shareFeedback, setShareFeedback] = React.useState(false);
+  const [imageIsLoaded, setImageIsLoaded] = React.useState(false);
 
   async function handleShare() {
     const shareText = generateShareText(status, guesses);
@@ -56,12 +58,15 @@ export function GameFinishedCard({
       <h2 className="mb-3 text-3xl font-bold md:text-4xl">{heading}</h2>
       <p className="text-lg md:text-xl">The player was {targetPlayer.name}</p>
       <div className="flex justify-center">
+        {!imageIsLoaded && <CustomSpinner />}
         <Image
           width={250}
           height={250}
           src={`${FPL_PLAYER_IMG_BASE_URL}${targetPlayer.photo}`}
           alt={targetPlayer.name}
+          onLoad={() => setImageIsLoaded(true)}
           onError={(e) => {
+            setImageIsLoaded(true);
             e.currentTarget.style.display = "none";
             const fallback = e.currentTarget
               .nextElementSibling as HTMLElement | null;
